@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('save-empresa','App\Http\Controllers\EmpresasController@saveEmpresa');
-
-// Route::get('/listDayBefore','App\Http\Controllers\PedidosController@listDayBefore');
-// Route::put('/pedidoEntregado/{id}','App\Http\Controllers\PedidosController@pedidoEntregado');
-// Route::put('/pedidoEntregadoNO/{id}','App\Http\Controllers\PedidosController@pedidoEntregadoNO');
+Route::get('listar-empresa','App\Http\Controllers\EmpresasController@listarEmpresas');
+Route::delete('eliminar-empresa/{id}','App\Http\Controllers\EmpresasController@deleteEmpresa');
+Route::get('empresa-byId/{id}','App\Http\Controllers\EmpresasController@getEmpresaById');
+Route::put('/actualizar-empresa/{id}','App\Http\Controllers\EmpresasController@actualizarEmpresa');
