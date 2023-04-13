@@ -18,9 +18,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+//API EMPRESA
 Route::post('save-empresa','App\Http\Controllers\EmpresasController@saveEmpresa');
 Route::get('listar-empresa','App\Http\Controllers\EmpresasController@listarEmpresas');
 Route::delete('eliminar-empresa/{id}','App\Http\Controllers\EmpresasController@deleteEmpresa');
 Route::get('empresa-byId/{id}','App\Http\Controllers\EmpresasController@getEmpresaById');
-Route::put('/actualizar-empresa/{id}','App\Http\Controllers\EmpresasController@actualizarEmpresa');
+Route::put('actualizar-empresa/{id}','App\Http\Controllers\EmpresasController@actualizarEmpresa');
+
+//API
