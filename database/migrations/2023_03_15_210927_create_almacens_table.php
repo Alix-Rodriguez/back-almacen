@@ -25,7 +25,7 @@ return new class extends Migration
             $table->integer('status');
             $table->string('contacto');
             $table->string('calle');
-            $table->string('numero_extension');
+            $table->string('numero_exterior');
             $table->string('numero_interno');
             $table->string('colonia');
             $table->string('cp');

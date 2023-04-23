@@ -10,7 +10,6 @@ class Almacen extends Model
     use HasFactory;
 
     protected $filltable = [
-
             'descuento_almacen',
             'tipo',
             'picking',
@@ -38,4 +37,5 @@ class Almacen extends Model
             'localidad_qa',
     ];
 
+    public $timestamps = false;
 }
