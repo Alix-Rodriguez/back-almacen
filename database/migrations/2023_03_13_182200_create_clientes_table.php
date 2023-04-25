@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('contacto');
             $table->string('delegacion');
+            $table->string('id_empresa');
             $table->timestamps();
         });
     }
