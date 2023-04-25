@@ -5,12 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Localidad extends Model
+class Delegacion extends Model
 {
     use HasFactory;
 
     protected $filltable = [
-        'id',
         'descripcion',
+        'code_delegacion',
     ];
+
+    public $timestamps = false;
+
 }

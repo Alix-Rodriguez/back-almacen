@@ -18,9 +18,28 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+//API EMPRESA
 Route::post('save-empresa','App\Http\Controllers\EmpresasController@saveEmpresa');
 Route::get('listar-empresa','App\Http\Controllers\EmpresasController@listarEmpresas');
 Route::delete('eliminar-empresa/{id}','App\Http\Controllers\EmpresasController@deleteEmpresa');
 Route::get('empresa-byId/{id}','App\Http\Controllers\EmpresasController@getEmpresaById');
-Route::put('/actualizar-empresa/{id}','App\Http\Controllers\EmpresasController@actualizarEmpresa');
+Route::put('actualizar-empresa/{id}','App\Http\Controllers\EmpresasController@actualizarEmpresa');
+
+//API Almacen
+Route::get('listar-almacen','App\Http\Controllers\AlmacenController@listarAlmacenes');
+Route::post('save-almacen','App\Http\Controllers\AlmacenController@guardarAlmacen');
+
+
+//API Delegaciones
+Route::get('listar-delegaciones','App\Http\Controllers\DelegacionController@listDelegacion');
+Route::post('save-delegaciones','App\Http\Controllers\DelegacionController@guardarAllDelegaciones');
+
+
+Route::post('save-colonias','App\Http\Controllers\ColoniasController@guardarAllColonias');
+Route::get('listar-colonia/{id}','App\Http\Controllers\ColoniasController@coloniaById');
+
+//Zona
+Route::post('save-zona','App\Http\Controllers\LayoutController@crearZona');
+Route::post('save-rack','App\Http\Controllers\LayoutController@crearRack');
+Route::post('save-nivel','App\Http\Controllers\LayoutController@crearNivel');
+Route::post('save-localidad','App\Http\Controllers\LayoutController@crearLocalidad');
