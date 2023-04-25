@@ -30,6 +30,7 @@ class ClientesController extends Controller
             $cliente -> email = $request->email;
             $cliente -> contacto = $request->contacto;
             $cliente -> delegacion = $request->delegacion;
+            $cliente -> id_empresa = $request->id_empresa;
             $cliente -> save();
             
             return response([
@@ -117,6 +118,7 @@ class ClientesController extends Controller
             $cliente -> email = $request->email;
             $cliente -> contacto = $request->contacto;
             $cliente -> delegacion = $request->delegacion;
+            $cliente -> id_empresa = $request->id_empresa;
             $cliente -> save();
         
                 return response([

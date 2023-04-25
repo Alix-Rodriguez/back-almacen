@@ -26,6 +26,7 @@ class Clientes extends Model
         'codigoPostal',
         'email',
         'contacto',
-        'delegacion'
+        'delegacion',
+        'id_empresa'
     ];
 }
