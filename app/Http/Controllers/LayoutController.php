@@ -92,7 +92,7 @@ class LayoutController extends Controller
 
             $zona = Zona::all();
     
-            return response([Ñ
+            return response([
                 "status" => 200,
                 "data" => $zona
             ]);
