@@ -13,13 +13,19 @@ class Clientes extends Model
     
     protected $fillable = [
         'id',
+        'clave_cliente',
         'nombre',
         'nif',
-        'direccion',
+        'calle',
+        'colonia',
         'pais',
         'ciudad',
         'telefono',
         'telefono_opcional',
         'contribuyente',
+        'codigoPostal',
+        'email',
+        'contacto',
+        'delegacion'
     ];
 }

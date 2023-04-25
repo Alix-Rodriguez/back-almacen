@@ -13,16 +13,23 @@ class ClientesController extends Controller
      */
     public function saveCliente(Request $request){
     
-        try{
+        //try{
             $cliente = new Clientes();
+            $cliente -> clave_cliente = $request->clave_cliente;
             $cliente -> nombre = $request->nombre;
             $cliente -> nif = $request->nif;
+            $cliente -> calle = $request->calle;
+            $cliente -> colonia = $request->colonia;
             $cliente -> direccion = $request->direccion;
             $cliente -> pais = $request->pais;
             $cliente -> ciudad = $request->ciudad;
             $cliente -> telefono = $request->telefono;
             $cliente -> telefono_opcional = $request->telefono_opcional;
             $cliente -> contribuyente = $request->contribuyente;
+            $cliente -> codigoPostal = $request->codigoPostal;
+            $cliente -> email = $request->email;
+            $cliente -> contacto = $request->contacto;
+            $cliente -> delegacion = $request->delegacion;
             $cliente -> save();
             
             return response([
@@ -30,12 +37,12 @@ class ClientesController extends Controller
                 "msn" => 'Se ha guadardo satisfatoriamente'
             ]);
 
-        }catch (Exception $e){
+        /* }catch (Exception $e){
             return response([
                 "status" => 400,
                 "msn" => 'No se ha guadardo - error'
             ]);
-        }
+        } */
         
     }
     public function listarCliente(){
@@ -103,6 +110,13 @@ class ClientesController extends Controller
             $cliente -> telefono = $request->telefono;
             $cliente -> telefono_opcional = $request->telefono_opcional;
             $cliente -> contribuyente = $request->contribuyente;
+            $cliente -> clave_cliente = $request->clave_cliente;
+            $cliente -> calle = $request->calle;
+            $cliente -> colonia = $request->colonia;
+            $cliente -> codigoPostal = $request->codigoPostal;
+            $cliente -> email = $request->email;
+            $cliente -> contacto = $request->contacto;
+            $cliente -> delegacion = $request->delegacion;
             $cliente -> save();
         
                 return response([
