@@ -86,4 +86,77 @@ class LayoutController extends Controller
             ]);
         }
     }
+
+    public function listarZona(){
+        try{
+
+            $zona = Zona::all();
+    
+            return response([
+                "status" => 200,
+                "data" => $zona
+            ]);
+
+        }catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        } 
+    }
+
+    public function listarRack(){
+        try{
+
+            $rack = Rack::all();
+    
+            return response([
+                "status" => 200,
+                "data" => $rack
+            ]);
+
+        }catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        } 
+    }
+
+    public function listarNivel(){
+        try{
+
+            $nivel = Nivel::all();
+    
+            return response([
+                "status" => 200,
+                "data" => $nivel
+            ]);
+
+        }catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        } 
+    }
+
+    public function listarLocalidad(){
+        try{
+
+            $localidad = Localidad::all();
+    
+            return response([
+                "status" => 200,
+                "data" => $localidad
+            ]);
+
+        }catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        } 
+    }
+
 }

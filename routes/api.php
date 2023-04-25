@@ -43,3 +43,8 @@ Route::post('save-zona','App\Http\Controllers\LayoutController@crearZona');
 Route::post('save-rack','App\Http\Controllers\LayoutController@crearRack');
 Route::post('save-nivel','App\Http\Controllers\LayoutController@crearNivel');
 Route::post('save-localidad','App\Http\Controllers\LayoutController@crearLocalidad');
+
+Route::get('listar-zona','App\Http\Controllers\LayoutController@listarZona');
+Route::get('listar-rack','App\Http\Controllers\LayoutController@listarRack');
+Route::get('listar-nivel','App\Http\Controllers\LayoutController@listarNivel');
+Route::get('listar-localidad','App\Http\Controllers\LayoutController@listarLocalidad');
