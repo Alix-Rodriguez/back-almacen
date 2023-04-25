@@ -37,3 +37,9 @@ Route::post('save-delegaciones','App\Http\Controllers\DelegacionController@guard
 
 Route::post('save-colonias','App\Http\Controllers\ColoniasController@guardarAllColonias');
 Route::get('listar-colonia/{id}','App\Http\Controllers\ColoniasController@coloniaById');
+
+//Zona
+Route::post('save-zona','App\Http\Controllers\LayoutController@crearZona');
+Route::post('save-rack','App\Http\Controllers\LayoutController@crearRack');
+Route::post('save-nivel','App\Http\Controllers\LayoutController@crearNivel');
+Route::post('save-localidad','App\Http\Controllers\LayoutController@crearLocalidad');

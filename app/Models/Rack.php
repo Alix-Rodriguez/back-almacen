@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Rack extends Model
 {
     use HasFactory;
+
+    protected $filltable = [
+        'id',
+        'descripcion',
+    ];
 }
