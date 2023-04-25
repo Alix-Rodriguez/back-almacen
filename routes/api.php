@@ -48,3 +48,10 @@ Route::get('listar-zona','App\Http\Controllers\LayoutController@listarZona');
 Route::get('listar-rack','App\Http\Controllers\LayoutController@listarRack');
 Route::get('listar-nivel','App\Http\Controllers\LayoutController@listarNivel');
 Route::get('listar-localidad','App\Http\Controllers\LayoutController@listarLocalidad');
+
+//API CLIENTES
+Route::post('save-cliente','App\Http\Controllers\ClientesController@saveCliente');
+Route::get('listar-cliente','App\Http\Controllers\ClientesController@listarCliente');
+Route::delete('eliminar-cliente/{id}','App\Http\Controllers\ClientesController@deleteCliente');
+Route::put('/actualizar-cliente/{id}','App\Http\Controllers\ClientesController@actualizarCliente');
+Route::get('cliente-byId/{id}','App\Http\Controllers\ClientesController@getClienteById');
