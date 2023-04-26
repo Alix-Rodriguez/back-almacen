@@ -230,7 +230,7 @@ class LayoutController extends Controller
     }
 
     public function  actualizarLayout(Request $request){
-        //try{
+        try{
             $layout = Layout::findOrfail($request->id);
             $layout->id_zona = $request->id_zona;
             $layout->id_rack = $request->id_rack;
@@ -243,11 +243,11 @@ class LayoutController extends Controller
                 "msn" => 'Se ha actualizado satisfatoriamente'
             ]);
 
-        /*} catch (Exception $e){
+        } catch (Exception $e){
             return response([
                 "status" => 400,
                 "msn" => 'No se ha guadardo - error'
             ]);
-        } */
+        } 
 }
 }    
