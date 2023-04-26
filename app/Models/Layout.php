@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Layout extends Model
 {
     use HasFactory;
+
+
+    protected $filltable = [
+        'id_zona',
+        'id_rack',
+        'id_nivel',
+        'id_localidad'
+    ];
 }

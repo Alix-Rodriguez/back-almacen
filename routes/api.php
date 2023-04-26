@@ -55,3 +55,9 @@ Route::get('listar-cliente','App\Http\Controllers\ClientesController@listarClien
 Route::delete('eliminar-cliente/{id}','App\Http\Controllers\ClientesController@deleteCliente');
 Route::put('/actualizar-cliente/{id}','App\Http\Controllers\ClientesController@actualizarCliente');
 Route::get('cliente-byId/{id}','App\Http\Controllers\ClientesController@getClienteById');
+
+//layout
+Route::post('save-layout','App\Http\Controllers\LayoutController@saveLayout');
+Route::get('listar-layout','App\Http\Controllers\LayoutController@listarLayout');
+Route::delete('eliminar-layout/{id}','App\Http\Controllers\LayoutController@deleteLayout');
+Route::put('/actualizar-layout/{id}','App\Http\Controllers\layoutController@actualizarLayout');
