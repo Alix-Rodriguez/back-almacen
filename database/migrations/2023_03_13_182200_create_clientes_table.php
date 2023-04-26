@@ -18,12 +18,12 @@ return new class extends Migration
             $table->string('nif');
             $table->string('calle');
             $table->string('colonia');
-            $table->string('direccion');
+            //$table->string('direccion');
             $table->string('pais');
-            $table->string('ciudad');
+            //$table->string('ciudad');
             $table->string('telefono');
             $table->string('telefono_opcional');
-            $table->integer('contribuyente');
+            //$table->integer('contribuyente');
             $table->integer('codigoPostal');
             $table->string('email');
             $table->string('contacto');
