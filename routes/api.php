@@ -61,3 +61,7 @@ Route::post('save-layout','App\Http\Controllers\LayoutController@saveLayout');
 Route::get('listar-layout','App\Http\Controllers\LayoutController@listarLayout');
 Route::delete('eliminar-layout/{id}','App\Http\Controllers\LayoutController@deleteLayout');
 Route::put('/actualizar-layout/{id}','App\Http\Controllers\layoutController@actualizarLayout');
+
+//API paises
+Route::post('save-paises','App\Http\Controllers\PaisController@savePaises');
+Route::get('listar-paises','App\Http\Controllers\PaisController@listarPaises');
