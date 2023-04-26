@@ -31,6 +31,9 @@ class ClientesController extends Controller
             $cliente -> contacto = $request->contacto;
             $cliente -> delegacion = $request->delegacion;
             $cliente -> id_empresa = $request->id_empresa;
+            $cliente -> telefono_opcional2 = $request->telefono_opcional2;
+            $cliente -> numero_interior = $request->numero_interior;
+            $cliente -> numero_exterior = $request->numero_exterior;
             $cliente -> save();
             
             return response([
@@ -119,6 +122,9 @@ class ClientesController extends Controller
             $cliente -> contacto = $request->contacto;
             $cliente -> delegacion = $request->delegacion;
             $cliente -> id_empresa = $request->id_empresa;
+            $cliente -> telefono_opcional2 = $request->telefono_opcional2;
+            $cliente -> numero_interior = $request->numero_interior;
+            $cliente -> numero_exterior = $request->numero_exterior;
             $cliente -> save();
         
                 return response([

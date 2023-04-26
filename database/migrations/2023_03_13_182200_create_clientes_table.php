@@ -29,6 +29,9 @@ return new class extends Migration
             $table->string('contacto');
             $table->string('delegacion');
             $table->string('id_empresa');
+            $table->string('telefono_opcional2');
+            $table->string('numero_interior');
+            $table->string('numero_exterior');
             $table->timestamps();
         });
     }
