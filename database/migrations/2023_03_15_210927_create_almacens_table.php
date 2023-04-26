@@ -38,7 +38,7 @@ return new class extends Migration
             $table->integer('rack_qa');
             $table->integer('nivel_qa');
             $table->integer('localidad_qa');
-
+            $table->string('nombre');
         });
     }
 
