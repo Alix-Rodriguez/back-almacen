@@ -55,6 +55,7 @@ class AlmacenController extends Controller
             $almacen->rack_qa = $request->rack_qa;
             $almacen->nivel_qa = $request->nivel_qa;
             $almacen->localidad_qa = $request->localidad_qa;
+            $almacen->nombre = $request->nombre;
             $almacen-> save();
     
             return response([
@@ -99,6 +100,7 @@ class AlmacenController extends Controller
             $almacen->rack_qa = $request->rack_qa;
             $almacen->nivel_qa = $request->nivel_qa;
             $almacen->localidad_qa = $request->localidad_qa;
+            $almacen->nombre = $request->nombre;
             $almacen-> save();
             
             return response([

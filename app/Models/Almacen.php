@@ -35,6 +35,7 @@ class Almacen extends Model
             'rack_qa',
             'nivel_qa',
             'localidad_qa',
+            'nombre'
     ];
 
     public $timestamps = false;
