@@ -27,6 +27,9 @@ class Clientes extends Model
         'email',
         'contacto',
         'delegacion',
-        'id_empresa'
+        'id_empresa',
+        'telefono_opcional2',
+        'numero_interior',
+        'numero_exterior'
     ];
 }
