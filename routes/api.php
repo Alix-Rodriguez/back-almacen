@@ -82,3 +82,20 @@ Route::put('/actualizar-layout/{id}','App\Http\Controllers\layoutController@actu
 //API paises
 Route::post('save-paises','App\Http\Controllers\PaisController@savePaises');
 Route::get('listar-paises','App\Http\Controllers\PaisController@listarPaises');
+
+
+//api marca
+Route::post('save-marca','App\Http\Controllers\MarcaController@saveMarcas');
+Route::get('listar-marca','App\Http\Controllers\MarcaController@listarMarcas');
+
+//api marca
+Route::post('save-marca','App\Http\Controllers\MarcaController@saveMarcas');
+Route::get('listar-marca','App\Http\Controllers\MarcaController@listarMarcas');
+//api ubicacion
+Route::post('save-ubicacion1','App\Http\Controllers\Ubicacion1Controller@saveUbicacion1');
+Route::get('listar-marca1','App\Http\Controllers\MarcaController@listarMarcas');
+
+//API PROVEEDORES
+Route::post('save-proveedor','App\Http\Controllers\ProveedorController@saveProveedores');
+Route::get('listar-proveedor','App\Http\Controllers\ProveedorController@listarProveedor');
+
