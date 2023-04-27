@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
+use App\Models\LayoutQA;
 use App\Models\LocalidadQA;
 use App\Models\NivelQA;
 use App\Models\RackQA;
@@ -158,5 +159,68 @@ class LayoutQAController extends Controller
                 "msn" => 'No se ha guadardo - error'
             ]);
         } 
+    }
+
+
+
+    //layoutqa esta api sera cambiada
+
+    public function saveLayoutqa(Request $request){
+        try{
+            $layaoutqa = new LayoutQA();
+            $layaoutqa->id_zonaqa = $request->id_zonaqa;
+            $layaoutqa->id_rackqa = $request->id_rackqa;
+            $layaoutqa->id_nivelqa = $request->id_nivelqa;
+            $layaoutqa->id_localidadqa = $request->id_localidadqa;
+            $layaoutqa-> save();
+    
+            return response([
+                "status" => 200,
+                "msn" => 'Se ha guadardo satisfatoriamente'
+            ]);
+
+        }catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        }
+        
+    }
+
+    public function listarLayoutqa(){
+        try{
+
+            $layoutqa = LayoutQA::all();
+    
+            return response([
+                "status" => 200,
+                "data" => $layoutqa
+            ]);
+
+        }catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        }
+        
+    }
+
+    public function deletelayoutqa($id){
+        try{
+
+            $layoutqa = LayoutQA::destroy($id);
+            return response([
+                "status" => 200,
+                "data" => 'Se ha eliminado registro satisfactoriamente'
+            ]);
+
+        }catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        }
     }
 }
