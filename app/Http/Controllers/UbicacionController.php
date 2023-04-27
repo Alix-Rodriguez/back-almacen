@@ -10,7 +10,7 @@ use Exception;
 class UbicacionController extends Controller
 {
     public function saveUbicacion(Request $request){
-        //try{
+        try{
             $ubicacion = new Ubicacion();
             $ubicacion->ubicacion = $request->ubicacion;
             $ubicacion->save();
@@ -20,12 +20,30 @@ class UbicacionController extends Controller
                 "msn" => 'Se ha guadardo satisfatoriamente'
             ]);
 
-        /* }catch (Exception $e){
+        }catch (Exception $e){
             return response([
                 "status" => 400,
                 "msn" => 'No se ha guadardo - error'
             ]);
-        } */
+        }
         
+    }
+
+    public function listarUbicacion(){
+        try{
+
+            $ubicacion = Ubicacion::all();
+    
+            return response([
+                "status" => 200,
+                "data" => $ubicacion
+            ]);
+
+        }catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        } 
     }
 }

@@ -92,8 +92,8 @@ Route::get('listar-marca','App\Http\Controllers\MarcaController@listarMarcas');
 Route::post('save-marca','App\Http\Controllers\MarcaController@saveMarcas');
 Route::get('listar-marca','App\Http\Controllers\MarcaController@listarMarcas');
 //api ubicacion
-Route::post('save-ubicacion1','App\Http\Controllers\Ubicacion1Controller@saveUbicacion1');
-Route::get('listar-marca1','App\Http\Controllers\MarcaController@listarMarcas');
+Route::post('save-ubicacion','App\Http\Controllers\UbicacionController@saveUbicacion');
+Route::get('listar-ubicacion','App\Http\Controllers\UbicacionController@listarUbicacion');
 
 //API PROVEEDORES
 Route::post('save-proveedor','App\Http\Controllers\ProveedorController@saveProveedores');
