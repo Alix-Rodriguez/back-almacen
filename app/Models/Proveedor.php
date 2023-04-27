@@ -22,6 +22,7 @@ class Proveedor extends Model
         'telefono3',
         'numero_exterior',        
         'numero_interior',
+        'pais',
         'colonia',
         'delegacion',
         'contacto',

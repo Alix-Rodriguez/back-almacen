@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('telefono3');
             $table->string('numero_exterior');
             $table->string('numero_interior');
+            $table->string('pais');
             $table->string('colonia');
             $table->string('delegacion');
             $table->string('contacto');
