@@ -60,6 +60,12 @@ Route::get('listar-rackqa','App\Http\Controllers\LayoutQAController@listarRackQA
 Route::get('listar-nivelqa','App\Http\Controllers\LayoutQAController@listarNivelQA');
 Route::get('listar-localidadqa','App\Http\Controllers\LayoutQAController@listarLocalidadQA');
 
+//API LAYOUT (se cambiara)
+Route::post('save-layoutqa','App\Http\Controllers\LayoutQAController@saveLayoutqa');
+Route::get('listar-layoutqa','App\Http\Controllers\LayoutQAController@listarLayoutqa');
+Route::delete('eliminar-layoutqa/{id}','App\Http\Controllers\LayoutQAController@deleteLayoutqa');
+
+
 //API CLIENTES
 Route::post('save-cliente','App\Http\Controllers\ClientesController@saveCliente');
 Route::get('listar-cliente','App\Http\Controllers\ClientesController@listarCliente');

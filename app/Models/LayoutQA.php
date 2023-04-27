@@ -9,6 +9,10 @@ class LayoutQA extends Model
 {
     use HasFactory;
     protected $filltable = [
-        
+        'id',
+        'id_zonaqa',
+        'id_rackqa',
+        'id_nivelqa',
+        'id_localidadqa'
     ];
 }
