@@ -49,6 +49,17 @@ Route::get('listar-rack','App\Http\Controllers\LayoutController@listarRack');
 Route::get('listar-nivel','App\Http\Controllers\LayoutController@listarNivel');
 Route::get('listar-localidad','App\Http\Controllers\LayoutController@listarLocalidad');
 
+//API ZONAQA
+Route::post('save-zonaqa','App\Http\Controllers\LayoutQAController@crearZonaQA');
+Route::post('save-rackqa','App\Http\Controllers\LayoutQAController@crearRackQA');
+Route::post('save-nivelqa','App\Http\Controllers\LayoutQAController@crearNivelQA');
+Route::post('save-localidadqa','App\Http\Controllers\LayoutQAController@crearLocalidadQA');
+
+Route::get('listar-zonaqa','App\Http\Controllers\LayoutQAController@listarZonaQA');
+Route::get('listar-rackqa','App\Http\Controllers\LayoutQAController@listarRackQA');
+Route::get('listar-nivelqa','App\Http\Controllers\LayoutQAController@listarNivelQA');
+Route::get('listar-localidadqa','App\Http\Controllers\LayoutQAController@listarLocalidadQA');
+
 //API CLIENTES
 Route::post('save-cliente','App\Http\Controllers\ClientesController@saveCliente');
 Route::get('listar-cliente','App\Http\Controllers\ClientesController@listarCliente');

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class LayoutQA extends Model
 {
     use HasFactory;
+    protected $filltable = [
+        
+    ];
 }

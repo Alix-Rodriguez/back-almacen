@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('layouts', function (Blueprint $table) {
             $table->id();
-            $table->string('id_zona');
-            $table->string('id_rack');
-            $table->string('id_nivel');
-            $table->string('id_localidad');
+            $table->integer('id_zona');
+            $table->integer('id_rack');
+            $table->integer('id_nivel');
+            $table->integer('id_localidad');
             $table->timestamps();
         });
     }
