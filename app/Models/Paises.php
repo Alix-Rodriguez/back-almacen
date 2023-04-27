@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LayoutQA extends Model
+class Paises extends Model
 {
     use HasFactory;
-    protected $filltable = [
-        
-    ];
 }

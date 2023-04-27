@@ -9,6 +9,7 @@ use App\Models\Rack;
 use App\Models\Zona;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LayoutController extends Controller
 {
@@ -187,27 +188,25 @@ class LayoutController extends Controller
         
     }
 
-    public function listarLayout(Request $request){
-        try{
-        
-            $layout = Layout::all();
-
+    public function listarLayout(){
+        //try{
+        /* 
+            $zona = DB::('zonas')->select('descripcion', 'descripcion as zona_id');
+            $resultado= DB::table('layouts')
+                ->joinSub($zona) */
+        /* }catch(Exception $e){
             return response([
-                "status" => 200,
-                "msn"=>$layout
+                "status" => 400,
+                "msn" => $e
             ]);
+        } */
 
-            return response([
-                "status" => 200,
-                "msn" => 'Se ha guadardo satisfatoriamente'
-            ]);
-
-        }catch (Exception $e){
+        /* }catch (Exception $e){
             return response([
                 "status" => 400,
                 "msn" => 'No se ha guadardo - error'
             ]);
-        }
+        } */
         
     }
 
