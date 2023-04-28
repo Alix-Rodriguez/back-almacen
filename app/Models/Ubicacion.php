@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ubicacion extends Model
 {
+    public $table = 'ubicacion';
     use HasFactory;
 
     protected $filltable = [

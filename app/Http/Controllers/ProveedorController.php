@@ -22,6 +22,7 @@ class ProveedorController extends Controller
             $proveedor -> telefono3 = $request ->telefono3;
             $proveedor -> numero_exterior = $request ->numero_exterior;
             $proveedor -> numero_interior = $request ->numero_interior;
+            $proveedor -> pais = $request -> pais;
             $proveedor -> colonia = $request ->colonia;
             $proveedor -> delegacion = $request ->delegacion;
             $proveedor -> contacto = $request ->contacto;
