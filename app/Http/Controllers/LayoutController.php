@@ -197,6 +197,10 @@ class LayoutController extends Controller
             ->join('racks','racks.id','=','layouts.id_rack')
             ->join('nivels','nivels.id','=','layouts.id_nivel')
             ->join('localidads','localidads.id','=','layouts.id_localidad')
+            ->select('zonas.id as id_zona','zonas.descripcion as descripcion_zona',
+            'racks.id as id_racks', 'racks.descripcion as descripcion_racks',
+            'nivels.id as id_nivels','nivels.descripcion as descripcion_nivels',
+            'localidads.id as id_localidads','localidads.descripcion as descripcion_localidads',)
             ->get();
             return response([
                 "status" => 200,

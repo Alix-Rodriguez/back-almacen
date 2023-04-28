@@ -99,3 +99,6 @@ Route::get('listar-ubicacion','App\Http\Controllers\UbicacionController@listarUb
 Route::post('save-proveedor','App\Http\Controllers\ProveedorController@saveProveedores');
 Route::get('listar-proveedor','App\Http\Controllers\ProveedorController@listarProveedor');
 
+//API LOCALIDAD ALSE
+Route::post('save-localidadAlse','App\Http\Controllers\localidadAlseController@crearLocalidadAlse');
+Route::get('listar-localidadAlse','App\Http\Controllers\localidadAlseController@listarLocalidadAlse');
