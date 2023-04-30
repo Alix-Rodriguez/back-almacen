@@ -268,5 +268,39 @@ class LayoutController extends Controller
                 "msn" => 'No se ha guadardo - error'
             ]);
         } 
-}
+    }
+    public function deleteZona($id){
+        try{
+
+            $zona = Zona::destroy($id);
+            return response([
+                "status" => 200,
+                "data" => 'Se ha eliminado registro satisfactoriamente'
+            ]);
+
+        }catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        }
+    }
+    public function  actualizarZona(Request $request){
+        try{
+            $zona = Zona::findOrfail($request->id);
+            $zona->descripcion = $request->descripcion;
+            $zona->save();
+    
+            return response([
+                "status" => 200,
+                "msn" => 'Se ha actualizado satisfatoriamente'
+            ]);
+
+        } catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        } 
+    }
 }    
