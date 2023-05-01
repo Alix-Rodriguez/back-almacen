@@ -198,35 +198,13 @@ class LayoutController extends Controller
             ->leftJoin('nivels','nivels.id','=','layouts.id_nivel')
             ->leftJoin('localidads','localidads.id','=','layouts.id_localidad')
             ->select('zonas.id as id_zona','zonas.descripcion as descripcion_zona',
-            'racks.id as id_racks', 'racks.descripcion as descripcion_racks',
+            'racks.id as id_racks','racks.descripcion as descripcion_racks',
             'nivels.id as id_nivels','nivels.descripcion as descripcion_nivels',
             'localidads.id as id_localidads','localidads.descripcion as descripcion_localidads',
             'layouts.id')
             ->get();
-            return response([
-                "status" => 200,
-                "data" => $resultado
-            ]);
-        
-           /*  $zona = DB::table('zonas')->select('descripcion', 'descripcion as zona_id');
-            $resultado= DB::table('layouts')
-                ->joinSub($zona, 'zona',function($join){
-                    $join->on('zona.descripcion','=','layouts.id');
-                })->get();
-                return $resultado; */
-        /* }catch(Exception $e){
-            return response([
-                "status" => 400,
-                "msn" => $e
-            ]);
-        } */
-
-        /* }catch (Exception $e){
-            return response([
-                "status" => 400,
-                "msn" => 'No se ha guadardo - error'
-            ]);
-        } */
+            return $resultado;
+            
         
     }
 

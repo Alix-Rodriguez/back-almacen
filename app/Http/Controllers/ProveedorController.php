@@ -61,4 +61,55 @@ class ProveedorController extends Controller
         
     }
 
+    public function deleteProveedor($id){
+
+        try{    
+            $proveedor = Proveedor::destroy($id);
+            return response([
+                "status" => 200,
+                "msn" => 'Se ha eliminado registro satisfactoriamente'
+            ]);
+        }catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guardado - Error'
+            ]);
+        }
+
+    
+    }
+
+    public function actualizarProveedor(Request $request){
+        try{
+            $proveedor =  Proveedor::findOrfail($request->id);
+            $proveedor -> empresa = $request ->empresa;
+            $proveedor -> nombre_proveedor = $request ->nombre_proveedor;
+            $proveedor -> rfn = $request ->rfn;
+            $proveedor -> codigo_postal = $request ->codigo_postal;
+            $proveedor -> calle = $request ->calle;
+            $proveedor -> telefono1 = $request ->telefono1;
+            $proveedor -> telefono2 = $request ->telefono2;
+            $proveedor -> telefono3 = $request ->telefono3;
+            $proveedor -> numero_exterior = $request ->numero_exterior;
+            $proveedor -> numero_interior = $request ->numero_interior;
+            $proveedor -> pais = $request -> pais;
+            $proveedor -> colonia = $request ->colonia;
+            $proveedor -> delegacion = $request ->delegacion;
+            $proveedor -> contacto = $request ->contacto;
+            $proveedor -> email = $request ->email;
+            $proveedor -> save();
+
+            return response([
+                "status" => 200,
+                "msn" => 'Se ha guardado satisfactoriamente'
+            ]);
+
+        }catch(Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guardado - Error'
+            ]);
+        }
+    }
+
 }
