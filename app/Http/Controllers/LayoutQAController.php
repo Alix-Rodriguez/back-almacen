@@ -194,10 +194,10 @@ class LayoutQAController extends Controller
 
             // $layoutqa = LayoutQA::all();
             $resultado = DB::table('layout_q_a_s')
-            ->join('zona_q_a_s','zona_q_a_s.id','=','layout_q_a_s.id_zonaqa')
-            ->join('rack_q_a_s','rack_q_a_s.id','=','layout_q_a_s.id_rackqa')
-            ->join('nivel_q_a_s','nivel_q_a_s.id','=','layout_q_a_s.id_nivelqa')
-            ->join('localidad_q_a_s','localidad_q_a_s.id','=','layout_q_a_s.id_localidadqa')
+            ->leftJoin('zona_q_a_s','zona_q_a_s.id','=','layout_q_a_s.id_zonaqa')
+            ->leftJoin('rack_q_a_s','rack_q_a_s.id','=','layout_q_a_s.id_rackqa')
+            ->leftJoin('nivel_q_a_s','nivel_q_a_s.id','=','layout_q_a_s.id_nivelqa')
+            ->leftJoin('localidad_q_a_s','localidad_q_a_s.id','=','layout_q_a_s.id_localidadqa')
             ->select('zona_q_a_s.id as id_zona_q_a_s','zona_q_a_s.descripcion as descripcion_zona',
             'rack_q_a_s.id as id_rack_q_a_s', 'rack_q_a_s.descripcion as descripcion_rack',
             'nivel_q_a_s.id as id_nivel_q_a_s','nivel_q_a_s.descripcion as descripcion_nivel',

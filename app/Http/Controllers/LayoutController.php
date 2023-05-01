@@ -193,10 +193,10 @@ class LayoutController extends Controller
 
 
             $resultado = DB::table('layouts')
-            ->join('zonas','zonas.id','=','layouts.id_zona')
-            ->join('racks','racks.id','=','layouts.id_rack')
-            ->join('nivels','nivels.id','=','layouts.id_nivel')
-            ->join('localidads','localidads.id','=','layouts.id_localidad')
+            ->leftJoin('zonas','zonas.id','=','layouts.id_zona')
+            ->leftJoin('racks','racks.id','=','layouts.id_rack')
+            ->leftJoin('nivels','nivels.id','=','layouts.id_nivel')
+            ->leftJoin('localidads','localidads.id','=','layouts.id_localidad')
             ->select('zonas.id as id_zona','zonas.descripcion as descripcion_zona',
             'racks.id as id_racks', 'racks.descripcion as descripcion_racks',
             'nivels.id as id_nivels','nivels.descripcion as descripcion_nivels',
