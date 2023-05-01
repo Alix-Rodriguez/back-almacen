@@ -60,10 +60,6 @@ Route::put('actualizar-nivel/{id}','App\Http\Controllers\LayoutController@actual
 Route::put('actualizar-localidad/{id}','App\Http\Controllers\LayoutController@actualizarLocalidad');
 
 
-
-
-
-
 //API ZONAQA
 Route::post('save-zonaqa','App\Http\Controllers\LayoutQAController@crearZonaQA');
 Route::post('save-rackqa','App\Http\Controllers\LayoutQAController@crearRackQA');
@@ -75,7 +71,7 @@ Route::get('listar-rackqa','App\Http\Controllers\LayoutQAController@listarRackQA
 Route::get('listar-nivelqa','App\Http\Controllers\LayoutQAController@listarNivelQA');
 Route::get('listar-localidadqa','App\Http\Controllers\LayoutQAController@listarLocalidadQA');
 
-//API LAYOUT (se cambiara)
+//API LAYOUTQA
 Route::post('save-layoutqa','App\Http\Controllers\LayoutQAController@saveLayoutqa');
 Route::get('listar-layoutqa','App\Http\Controllers\LayoutQAController@listarLayoutqa');
 Route::delete('eliminar-layoutqa/{id}','App\Http\Controllers\LayoutQAController@deleteLayoutqa');
@@ -103,9 +99,6 @@ Route::get('listar-paises','App\Http\Controllers\PaisController@listarPaises');
 Route::post('save-marca','App\Http\Controllers\MarcaController@saveMarcas');
 Route::get('listar-marca','App\Http\Controllers\MarcaController@listarMarcas');
 
-//api marca
-Route::post('save-marca','App\Http\Controllers\MarcaController@saveMarcas');
-Route::get('listar-marca','App\Http\Controllers\MarcaController@listarMarcas');
 //api ubicacion
 Route::post('save-ubicacion','App\Http\Controllers\UbicacionController@saveUbicacion');
 Route::get('listar-ubicacion','App\Http\Controllers\UbicacionController@listarUbicacion');
@@ -113,6 +106,9 @@ Route::get('listar-ubicacion','App\Http\Controllers\UbicacionController@listarUb
 //API PROVEEDORES
 Route::post('save-proveedor','App\Http\Controllers\ProveedorController@saveProveedores');
 Route::get('listar-proveedor','App\Http\Controllers\ProveedorController@listarProveedor');
+Route::delete('delete-proveedor/{id}', 'App\Http\Controllers\ProveedorController@deleteProveedor');
+Route::put('/actualizar-proveedor/{id}','App\Http\Controllers\ProveedorController@actualizarProveedor');
+
 
 //API LOCALIDAD ALSE
 Route::post('save-localidadAlse','App\Http\Controllers\localidadAlseController@crearLocalidadAlse');
