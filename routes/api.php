@@ -26,8 +26,10 @@ Route::get('empresa-byId/{id}','App\Http\Controllers\EmpresasController@getEmpre
 Route::put('actualizar-empresa/{id}','App\Http\Controllers\EmpresasController@actualizarEmpresa');
 
 //API Almacen
-Route::get('listar-almacen','App\Http\Controllers\AlmacenController@listarAlmacenes');
 Route::post('save-almacen','App\Http\Controllers\AlmacenController@guardarAlmacen');
+Route::get('listar-almacen','App\Http\Controllers\AlmacenController@listarAlmacenes');
+Route::delete('eliminar-almacen/{id}','App\Http\Controllers\AlmacenController@eliminarAlmacen');
+Route::put('actualizar-almacen/{id}','App\Http\Controllers\AlmacenController@updateAlmacen');
 
 
 //API Delegaciones
