@@ -50,9 +50,15 @@ Route::get('listar-nivel','App\Http\Controllers\LayoutController@listarNivel');
 Route::get('listar-localidad','App\Http\Controllers\LayoutController@listarLocalidad');
 
 Route::delete('delete-zona/{id}','App\Http\Controllers\LayoutController@deleteZona');
-
+Route::delete('delete-rack/{id}','App\Http\Controllers\LayoutController@deleteRack');
+Route::delete('delete-nivel/{id}','App\Http\Controllers\LayoutController@deleteNivel');
+Route::delete('delete-localidad/{id}','App\Http\Controllers\LayoutController@deleteLocalidad');
 
 Route::put('actualizar-zona/{id}','App\Http\Controllers\LayoutController@actualizarZona');
+Route::put('actualizar-rack/{id}','App\Http\Controllers\LayoutController@actualizarRack');
+Route::put('actualizar-nivel/{id}','App\Http\Controllers\LayoutController@actualizarNIvel');
+Route::put('actualizar-localidad/{id}','App\Http\Controllers\LayoutController@actualizarLocalidad');
+
 
 
 
