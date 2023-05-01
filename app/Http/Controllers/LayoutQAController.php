@@ -9,6 +9,7 @@ use App\Models\RackQA;
 use App\Models\ZonaQA;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class LayoutQAController extends Controller
@@ -189,21 +190,32 @@ class LayoutQAController extends Controller
     }
 
     public function listarLayoutqa(){
-        try{
+        // try{
 
-            $layoutqa = LayoutQA::all();
+            // $layoutqa = LayoutQA::all();
+            $resultado = DB::table('layout_q_a_s')
+            ->leftJoin('zona_q_a_s','zona_q_a_s.id','=','layout_q_a_s.id_zonaqa')
+            ->leftJoin('rack_q_a_s','rack_q_a_s.id','=','layout_q_a_s.id_rackqa')
+            ->leftJoin('nivel_q_a_s','nivel_q_a_s.id','=','layout_q_a_s.id_nivelqa')
+            ->leftJoin('localidad_q_a_s','localidad_q_a_s.id','=','layout_q_a_s.id_localidadqa')
+            ->select('zona_q_a_s.id as id_zona_q_a_s','zona_q_a_s.descripcion as descripcion_zona',
+            'rack_q_a_s.id as id_rack_q_a_s', 'rack_q_a_s.descripcion as descripcion_rack',
+            'nivel_q_a_s.id as id_nivel_q_a_s','nivel_q_a_s.descripcion as descripcion_nivel',
+            'localidad_q_a_s.id as id_localidad_q_a_s','localidad_q_a_s.descripcion as descripcion_localidad',
+            'layout_q_a_s.id')
+            ->get();
     
             return response([
                 "status" => 200,
-                "data" => $layoutqa
+                "data" => $resultado
             ]);
 
-        }catch (Exception $e){
-            return response([
-                "status" => 400,
-                "msn" => 'No se ha guadardo - error'
-            ]);
-        }
+        // }catch (Exception $e){
+        //     return response([
+        //         "status" => 400,
+        //         "msn" => 'No se ha guadardo - error'
+        //     ]);
+        // }
         
     }
 

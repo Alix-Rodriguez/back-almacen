@@ -38,7 +38,7 @@ Route::post('save-delegaciones','App\Http\Controllers\DelegacionController@guard
 Route::post('save-colonias','App\Http\Controllers\ColoniasController@guardarAllColonias');
 Route::get('listar-colonia/{id}','App\Http\Controllers\ColoniasController@coloniaById');
 
-//Zona
+//Zona Rack nivel localidad 
 Route::post('save-zona','App\Http\Controllers\LayoutController@crearZona');
 Route::post('save-rack','App\Http\Controllers\LayoutController@crearRack');
 Route::post('save-nivel','App\Http\Controllers\LayoutController@crearNivel');
@@ -48,6 +48,21 @@ Route::get('listar-zona','App\Http\Controllers\LayoutController@listarZona');
 Route::get('listar-rack','App\Http\Controllers\LayoutController@listarRack');
 Route::get('listar-nivel','App\Http\Controllers\LayoutController@listarNivel');
 Route::get('listar-localidad','App\Http\Controllers\LayoutController@listarLocalidad');
+
+Route::delete('delete-zona/{id}','App\Http\Controllers\LayoutController@deleteZona');
+Route::delete('delete-rack/{id}','App\Http\Controllers\LayoutController@deleteRack');
+Route::delete('delete-nivel/{id}','App\Http\Controllers\LayoutController@deleteNivel');
+Route::delete('delete-localidad/{id}','App\Http\Controllers\LayoutController@deleteLocalidad');
+
+Route::put('actualizar-zona/{id}','App\Http\Controllers\LayoutController@actualizarZona');
+Route::put('actualizar-rack/{id}','App\Http\Controllers\LayoutController@actualizarRack');
+Route::put('actualizar-nivel/{id}','App\Http\Controllers\LayoutController@actualizarNIvel');
+Route::put('actualizar-localidad/{id}','App\Http\Controllers\LayoutController@actualizarLocalidad');
+
+
+
+
+
 
 //API ZONAQA
 Route::post('save-zonaqa','App\Http\Controllers\LayoutQAController@crearZonaQA');

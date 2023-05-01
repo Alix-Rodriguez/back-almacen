@@ -193,14 +193,15 @@ class LayoutController extends Controller
 
 
             $resultado = DB::table('layouts')
-            ->join('zonas', 'zonas.id', '=', 'layouts.id_zona')
-            ->join('racks', 'racks.id', '=', 'layouts.id_rack')
-            ->join('nivels', 'nivels.id', '=', 'layouts.id_nivel')
-            ->join('localidads', 'localidads.id', '=', 'layouts.id_localidad')
+            ->leftJoin('zonas','zonas.id','=','layouts.id_zona')
+            ->leftJoin('racks','racks.id','=','layouts.id_rack')
+            ->leftJoin('nivels','nivels.id','=','layouts.id_nivel')
+            ->leftJoin('localidads','localidads.id','=','layouts.id_localidad')
             ->select('zonas.id as id_zona','zonas.descripcion as descripcion_zona',
             'racks.id as id_racks','racks.descripcion as descripcion_racks',
             'nivels.id as id_nivels','nivels.descripcion as descripcion_nivels',
-            'localidads.id as id_localidads','localidads.descripcion as descripcion_localidads' )
+            'localidads.id as id_localidads','localidads.descripcion as descripcion_localidads',
+            'layouts.id')
             ->get();
             return $resultado;
             
@@ -245,5 +246,141 @@ class LayoutController extends Controller
                 "msn" => 'No se ha guadardo - error'
             ]);
         } 
-}
+    }
+    public function deleteZona($id){
+        try{
+
+            $zona = Zona::destroy($id);
+            return response([
+                "status" => 200,
+                "data" => 'Se ha eliminado registro satisfactoriamente'
+            ]);
+
+        }catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        }
+    }
+    public function  actualizarZona(Request $request){
+        try{
+            $zona = Zona::findOrfail($request->id);
+            $zona->descripcion = $request->descripcion;
+            $zona->save();
+    
+            return response([
+                "status" => 200,
+                "msn" => 'Se ha actualizado satisfatoriamente'
+            ]);
+
+        } catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        } 
+    }
+    public function deleteRack($id){
+        try{
+
+            $rack = Rack::destroy($id);
+            return response([
+                "status" => 200,
+                "data" => 'Se ha eliminado registro satisfactoriamente'
+            ]);
+
+        }catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        }
+    }
+    public function  actualizarRack(Request $request){
+        try{
+            $rack = Rack::findOrfail($request->id);
+            $rack->descripcion = $request->descripcion;
+            $rack->save();
+    
+            return response([
+                "status" => 200,
+                "msn" => 'Se ha actualizado satisfatoriamente'
+            ]);
+
+        } catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        } 
+    }
+    public function deleteNivel($id){
+        try{
+
+            $nivel = Nivel::destroy($id);
+            return response([
+                "status" => 200,
+                "data" => 'Se ha eliminado registro satisfactoriamente'
+            ]);
+
+        }catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        }
+    }
+    public function  actualizarNivel(Request $request){
+        try{
+            $nivel = Nivel::findOrfail($request->id);
+            $nivel->descripcion = $request->descripcion;
+            $nivel->save();
+    
+            return response([
+                "status" => 200,
+                "msn" => 'Se ha actualizado satisfatoriamente'
+            ]);
+
+        } catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        } 
+    }
+    public function deleteLocalidad($id){
+        try{
+
+            $localidad = Localidad::destroy($id);
+            return response([
+                "status" => 200,
+                "data" => 'Se ha eliminado registro satisfactoriamente'
+            ]);
+
+        }catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        }
+    }
+    public function  actualizarLocalidad(Request $request){
+        try{
+            $Localidad = Localidad::findOrfail($request->id);
+            $Localidad->descripcion = $request->descripcion;
+            $Localidad->save();
+    
+            return response([
+                "status" => 200,
+                "msn" => 'Se ha actualizado satisfatoriamente'
+            ]);
+
+        } catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        } 
+    }
 }    
