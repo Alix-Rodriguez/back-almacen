@@ -10,6 +10,7 @@ class LineaProducto extends Model
     use HasFactory;
 
     public $timestamps = false;
+    public $table = 'linea_productos';
     
     protected $fillable = [
         'id',
