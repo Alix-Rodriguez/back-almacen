@@ -203,7 +203,10 @@ class LayoutController extends Controller
             'localidads.id as id_localidads','localidads.descripcion as descripcion_localidads',
             'layouts.id')
             ->get();
-            return $resultado;
+            return response([
+                "status" => 200,
+                "data" => $resultado
+            ]);
             
         
     }

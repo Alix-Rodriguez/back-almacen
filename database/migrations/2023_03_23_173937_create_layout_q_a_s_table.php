@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('layout_q_a_s', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_zonaqa');
-            $table->integer('id_rackqa');
-            $table->integer('id_nivelqa');
-            $table->integer('id_localidadqa');
+            $table->integer('id_zonaqa')->nullable();
+            $table->integer('id_rackqa')->nullable();
+            $table->integer('id_nivelqa')->nullable();
+            $table->integer('id_localidadqa')->nullable();
             $table->timestamps();
         });
     }

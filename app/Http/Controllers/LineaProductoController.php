@@ -16,7 +16,7 @@ class LineaProductoController extends Controller
 
         return response([
             "status" => 200,
-            "msn" => $lineaProducto
+            "msn" => 'Se ha guadardo satisfatoriamente'
         ]);
     }catch (Exception $e){
         return response([
@@ -32,12 +32,12 @@ class LineaProductoController extends Controller
 
             return response([
                 "status" => 200,
-                "msn" => $lineaProducto
+                "data" => $lineaProducto
             ]);
         }catch (Exception $e){
             return response([
                 "status" => 400,
-                "msn" => 'No se ha guadardo - error'
+                "data" => 'No se ha guadardo - error'
             ]);
     }
 }
@@ -54,7 +54,7 @@ class LineaProductoController extends Controller
         }catch (exception $e){
             return response([
                 "status" => 400,
-                "msn" => 'no se ha guardado - error'
+                "data" => 'no se ha guardado - error'
             ]);
         }
 

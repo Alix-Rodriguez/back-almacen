@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('descuento_almacen');
             $table->integer('tipo');
-            $table->integer('picking')->nullable( );
+            $table->integer('picking')->nullable();
             $table->integer('etiqueta_entrada');
             $table->integer('usa_zona');
             $table->integer('usa_rack');
