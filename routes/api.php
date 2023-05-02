@@ -125,3 +125,9 @@ Route::get('listar-lineaproducto','App\Http\Controllers\lineaProductoController@
 Route::delete('delete-lineaproducto/{id}', 'App\Http\Controllers\lineaProductoController@deleteLineaProducto');
 Route::put('/actualizar-lineaproducto/{id}','App\Http\Controllers\lineaProductoController@actualizarLineaProducto');
 
+//API Unidad de carga
+Route::post('save-unidadcarga','App\Http\Controllers\UnidadcargaController@saveUnidadcarga');
+Route::get('listar-unidadcarga','App\Http\Controllers\UnidadcargaController@listarUnidadcarga');
+Route::delete('delete-unidadcarga/{id}', 'App\Http\Controllers\UnidadcargaController@deleteUnidadcarga');
+Route::put('/actualizar-unidadcarga/{id}','App\Http\Controllers\UnidadcargaController@actualizarUnidadcarga');
+

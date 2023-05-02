@@ -13,31 +13,28 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
+            $table->integer('id_empresas');
             $table->string('sku');
-            $table->integer('id_proveedores');
             $table->string('descripcion');
             $table->string('modelo');
-            $table->string('linea');
-            $table->string('marca');
-            $table->integer('cantidad');
-            $table->integer('costo');
+            $table->integer('id_linea_producto');
             $table->integer('id_marca');
-            $table->integer('id_almacen');
             $table->integer('serialisable');
-            $table->integer('caducidad');
             $table->integer('sobresurtimiento');
-            $table->integer('status');
+            $table->integer('serialisable_surtir');
+            $table->integer('caducidad');
+            $table->integer('requiere_inspeccion_calidad');
+            $table->integer('requiere_fecha_cadu');
             $table->integer('numero_parte');
-            $table->integer('qa');
-            $table->integer('serialisable_recepcion');
-            $table->string('sku_compuesto');
+            $table->integer('requiere_lote');
             $table->integer('lote_compuesto');
             $table->integer('id_config_lote');
-            $table->integer('requiere_lote');
-            $table->integer('requiere_fecha_cadu');
-            $table->integer('id_linea');
-            $table->string('codigo_barra');
+            $table->integer('id_unidad_de_medida');
+            $table->integer('peso');
+            $table->date('fecha_descontinuo');
+            $table->integer('status');
+            $table->string('sku_compuesto');
+            $table->string('sku_proveedores');
             $table->timestamps();
         });
     }
