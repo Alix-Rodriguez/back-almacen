@@ -131,3 +131,8 @@ Route::get('listar-unidadcarga','App\Http\Controllers\UnidadcargaController@list
 Route::delete('delete-unidadcarga/{id}', 'App\Http\Controllers\UnidadcargaController@deleteUnidadcarga');
 Route::put('/actualizar-unidadcarga/{id}','App\Http\Controllers\UnidadcargaController@actualizarUnidadcarga');
 
+//API configuracion lote
+Route::post('save-configlote','App\Http\Controllers\ConfigloteController@saveConfiglote');
+Route::get('listar-configlote','App\Http\Controllers\ConfigloteController@listarConfiglote');
+Route::delete('delete-configlote/{id}', 'App\Http\Controllers\ConfigloteController@deleteConfiglote');
+Route::put('/actualizar-configlote/{id}','App\Http\Controllers\ConfigloteController@actualizarConfiglote');
