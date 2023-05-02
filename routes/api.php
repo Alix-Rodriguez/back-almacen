@@ -26,8 +26,10 @@ Route::get('empresa-byId/{id}','App\Http\Controllers\EmpresasController@getEmpre
 Route::put('actualizar-empresa/{id}','App\Http\Controllers\EmpresasController@actualizarEmpresa');
 
 //API Almacen
-Route::get('listar-almacen','App\Http\Controllers\AlmacenController@listarAlmacenes');
 Route::post('save-almacen','App\Http\Controllers\AlmacenController@guardarAlmacen');
+Route::get('listar-almacen','App\Http\Controllers\AlmacenController@listarAlmacenes');
+Route::delete('eliminar-almacen/{id}','App\Http\Controllers\AlmacenController@eliminarAlmacen');
+Route::put('actualizar-almacen/{id}','App\Http\Controllers\AlmacenController@updateAlmacen');
 
 
 //API Delegaciones
@@ -98,6 +100,9 @@ Route::get('listar-paises','App\Http\Controllers\PaisController@listarPaises');
 //api marca
 Route::post('save-marca','App\Http\Controllers\MarcaController@saveMarcas');
 Route::get('listar-marca','App\Http\Controllers\MarcaController@listarMarcas');
+Route::delete('delete-marca/{id}', 'App\Http\Controllers\MarcaController@deleteMarca');
+Route::put('/actualizar-marca/{id}','App\Http\Controllers\MarcaController@actualizarMarca');
+
 
 //api ubicacion
 Route::post('save-ubicacion','App\Http\Controllers\UbicacionController@saveUbicacion');
@@ -113,3 +118,10 @@ Route::put('/actualizar-proveedor/{id}','App\Http\Controllers\ProveedorControlle
 //API LOCALIDAD ALSE
 Route::post('save-localidadAlse','App\Http\Controllers\localidadAlseController@crearLocalidadAlse');
 Route::get('listar-localidadAlse','App\Http\Controllers\localidadAlseController@listarLocalidadAlse');
+
+//API linea producto
+Route::post('save-lineaproducto','App\Http\Controllers\lineaProductoController@saveLineaProducto');
+Route::get('listar-lineaproducto','App\Http\Controllers\lineaProductoController@listarLineaProducto');
+Route::delete('delete-lineaproducto/{id}', 'App\Http\Controllers\lineaProductoController@deleteLineaProducto');
+Route::put('/actualizar-lineaproducto/{id}','App\Http\Controllers\lineaProductoController@actualizarLineaProducto');
+

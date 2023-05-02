@@ -116,8 +116,13 @@ class AlmacenController extends Controller
         }
     }
 
-    public function eliminarAlmacen(){
+    public function eliminarAlmacen($id){
         try{
+            $almacen = Almacen::destroy($id);
+            return response([
+                "status" => 200,
+                "data" => 'Se ha eliminado registro satisfactoriamente'
+            ]);
 
         }   catch(Exception $e){
             return response([
