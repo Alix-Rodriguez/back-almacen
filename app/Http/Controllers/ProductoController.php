@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 class ProductoController extends Controller
 {
     public function saveProducto(Request $request){
-        try{
-            $producto = new Producto;
+        //try{
+            $producto = new Producto();
             $producto -> id_empresas = $request -> id_empresas;
             $producto -> sku = $request -> sku;
             $producto -> descripcion = $request -> descripcion;
@@ -31,15 +31,16 @@ class ProductoController extends Controller
             $producto -> status = $request -> status;
             $producto -> sku_compuesto = $request -> sku_compuesto;
             $producto -> sku_proveedores = $request -> sku_proveedores;
+            $producto -> save();
             return response([
                 "status" => 200,
                 "msn" => 'Se ha guardado satisfactoriamente'
             ]);
-        }catch(Exception $e){
+        /* }catch(Exception $e){
             return response([
                 "status" => 400,
                 "msn" => 'No se ha guardado - error'
             ]);
-        }
+        } */
     }
 }
