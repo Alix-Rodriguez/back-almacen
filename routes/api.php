@@ -148,3 +148,11 @@ Route::put('/actualizar-unidadmedida/{id}','App\Http\Controllers\UnidadmedidaCon
 //API selectores de producto
 Route::get('listar-producto','App\Http\Controllers\ProductoController@listarSelects');
 Route::post('save-producto','App\Http\Controllers\ProductoController@saveProducto');
+
+//API ruta
+Route::post('save-ruta','App\Http\Controllers\RutaController@saveRuta');
+Route::get('listar-ruta','App\Http\Controllers\RutaController@listarRuta');
+Route::put('/actualizar-ruta/{id}','App\Http\Controllers\RutaController@actualizarRuta');
+Route::delete('delete-ruta/{id}', 'App\Http\Controllers\RutaController@deleteRuta');
+
+
