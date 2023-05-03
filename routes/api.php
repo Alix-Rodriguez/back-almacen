@@ -97,6 +97,7 @@ Route::post('save-paises','App\Http\Controllers\PaisController@savePaises');
 Route::get('listar-paises','App\Http\Controllers\PaisController@listarPaises');
 
 
+
 //api marca
 Route::post('save-marca','App\Http\Controllers\MarcaController@saveMarcas');
 Route::get('listar-marca','App\Http\Controllers\MarcaController@listarMarcas');
