@@ -12,31 +12,26 @@ class Producto extends Model
 
     protected $filltable = [
         'id',
-        'titulo',
+        'id_empresas',
         'sku',
-        'id_proveedores',
         'descripcion',
         'modelo',
-        'linea',
-        'marca',
-        'cantidad',
-        'costo',
+        'id_linea_producto',
         'id_marca',
-        'id_almacen',
         'serialisable',
         'caducidad',
-        'sobresurtimiento',
-        'status',
+        'requiere_inspeccion_calidad',
+        'requiere_fecha_cadu',
         'numero_parte',
-        'qa',
-        'serialisable_recepcion',
-        'sku_compuesto',
+        'requiere_lote',
         'lote_compuesto',
         'id_config_lote',
-        'requiere_lote',
-        'requiere_fecha_cadu',
-        'id_linea',
-        'codigo_barra'
+        'id_unidad_de_medida',
+        'peso',
+        'fecha_descontinuo',
+        'status',
+        'sku_compuesto',
+        'sku_proveedores'
     ];
     public $timestamps = false;
 }

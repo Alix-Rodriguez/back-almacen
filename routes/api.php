@@ -137,3 +137,14 @@ Route::post('save-configlote','App\Http\Controllers\ConfigloteController@saveCon
 Route::get('listar-configlote','App\Http\Controllers\ConfigloteController@listarConfiglote');
 Route::delete('delete-configlote/{id}', 'App\Http\Controllers\ConfigloteController@deleteConfiglote');
 Route::put('/actualizar-configlote/{id}','App\Http\Controllers\ConfigloteController@actualizarConfiglote');
+
+//API Unidad de medida
+Route::post('save-unidadmedida','App\Http\Controllers\UnidadmedidaController@saveUnidadmedida');
+Route::get('listar-unidadmedida','App\Http\Controllers\UnidadmedidaController@listarUnidadmedida');
+Route::delete('delete-unidadmedida/{id}', 'App\Http\Controllers\UnidadmedidaController@deleteUnidadmedida');
+Route::put('/actualizar-unidadmedida/{id}','App\Http\Controllers\UnidadmedidaController@actualizarUnidadmedida');
+
+
+//API selectores de producto
+Route::get('listar-producto','App\Http\Controllers\ProductoController@listarSelects');
+Route::post('save-producto','App\Http\Controllers\ProductoController@saveProducto');
