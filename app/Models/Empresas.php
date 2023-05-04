@@ -10,6 +10,7 @@ class Empresas extends Model
     use HasFactory;
 
 protected $filltable = [
+    'id',
     'nombre_empresa',
     'direccion_empresa',
     'centro_costo',

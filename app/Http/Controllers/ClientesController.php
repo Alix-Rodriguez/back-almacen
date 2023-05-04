@@ -13,7 +13,7 @@ class ClientesController extends Controller
      */
     public function saveCliente(Request $request){
     
-        //try{
+        try{
             $cliente = new Clientes();
             $cliente -> clave_cliente = $request->clave_cliente;
             $cliente -> nombre = $request->nombre;
@@ -41,12 +41,12 @@ class ClientesController extends Controller
                 "msn" => 'Se ha guadardo satisfatoriamente'
             ]);
 
-        /* }catch (Exception $e){
+        }catch (Exception $e){
             return response([
                 "status" => 400,
                 "msn" => 'No se ha guadardo - error'
             ]);
-        } */
+        }
         
     }
     public function listarCliente(){
