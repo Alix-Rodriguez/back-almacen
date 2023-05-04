@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('centro_costos', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_almace');
+            $table->integer('id_empresa');
+            $table->integer('id_cliente');
+            $table->integer('id_marca');
+            $table->integer('id_ubicacion_elsea');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }

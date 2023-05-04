@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_empresas');
+            $table->integer('id_empresa')-> nullable();
             $table->string('sku');
             $table->string('descripcion');
             $table->string('modelo');
             $table->integer('id_linea_producto');
             $table->integer('id_marca');
             $table->integer('serialisable');
+            $table->integer('caducidad');
             $table->integer('sobresurtimiento');
             $table->integer('serialisable_surtir');
-            $table->integer('caducidad');
             $table->integer('requiere_inspeccion_calidad');
             $table->integer('requiere_fecha_cadu');
             $table->integer('numero_parte');

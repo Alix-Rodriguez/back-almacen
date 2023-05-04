@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Producto extends Model
 {
     public $table = 'productos';
-    use HasFactory;
-
+    use HasFactory; 
     protected $filltable = [
         'id',
         'id_empresas',
@@ -20,6 +19,8 @@ class Producto extends Model
         'id_marca',
         'serialisable',
         'caducidad',
+        'sobresurtimiento',
+        'serialisable_surtir',
         'requiere_inspeccion_calidad',
         'requiere_fecha_cadu',
         'numero_parte',
@@ -34,4 +35,6 @@ class Producto extends Model
         'sku_proveedores'
     ];
     public $timestamps = false;
+
+	
 }

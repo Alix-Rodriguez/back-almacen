@@ -154,4 +154,9 @@ Route::get('listar-ruta','App\Http\Controllers\RutaController@listarRuta');
 Route::put('/actualizar-ruta/{id}','App\Http\Controllers\RutaController@actualizarRuta');
 Route::delete('delete-ruta/{id}', 'App\Http\Controllers\RutaController@deleteRuta');
 
+//API centro de costo
+Route::post('save-centrocosto','App\Http\Controllers\CentrocostosController@saveCentrocosto');
+Route::get('listar-centrocosto','App\Http\Controllers\CentrocostosController@listarCentrocosto');
+Route::put('/actualizar-centrocosto/{id}','App\Http\Controllers\CentrocostosController@actualizarCentrocosto');
+Route::delete('delete-centrocosto/{id}', 'App\Http\Controllers\CentrocostosController@deleteCentrocosto');
 
