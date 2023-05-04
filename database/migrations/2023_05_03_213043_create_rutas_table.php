@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('rutas', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre_ruta');
             $table->integer('empresa');
             $table->integer('almacen');
             $table->string('codigo_postal_inicio');

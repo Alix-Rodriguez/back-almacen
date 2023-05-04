@@ -12,6 +12,7 @@ class RutaController extends Controller
     public function saveRuta(Request $request){
         try{
             $ruta = new Ruta();
+            $ruta -> nombre_ruta =  $request ->nombre_ruta;
             $ruta -> empresa =  $request ->empresa;
             $ruta -> almacen =  $request ->almacen;
             $ruta -> codigo_postal_inicio =  $request ->codigo_postal_inicio;
@@ -47,6 +48,7 @@ class RutaController extends Controller
     public function actualizarRuta(Request $request){
         try{
             $ruta =  Ruta::findOrfail($request->id);
+            $ruta -> nombre_ruta =  $request ->nombre_ruta;
             $ruta -> empresa =  $request ->empresa;
             $ruta -> almacen =  $request ->almacen;
             $ruta -> codigo_postal_inicio =  $request ->codigo_postal_inicio;
