@@ -12,6 +12,8 @@ class RemitenteController extends Controller
     public function saveRemitente(Request $request){
         try{
         $remitente = new Remitente();
+        $remitente -> empresa = $request -> empresa;
+        $remitente -> almacen = $request -> almacen;
         $remitente -> calle = $request -> calle;
         $remitente -> numero_interno = $request -> numero_interno;
         $remitente -> numero_externo = $request -> numero_externo;
@@ -53,6 +55,8 @@ public function listarRemitente(){
 public function actualizarRemitente(Request $request){
     try{
     $remitente =  Remitente::findOrfail($request->id);
+    $remitente -> empresa = $request -> empresa;
+    $remitente -> almacen = $request -> almacen;
     $remitente -> calle = $request -> calle;
     $remitente -> numero_interno = $request -> numero_interno;
     $remitente -> numero_externo = $request -> numero_externo;

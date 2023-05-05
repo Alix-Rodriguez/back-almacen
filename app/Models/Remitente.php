@@ -13,6 +13,8 @@ class Remitente extends Model
 
     protected $filltable = [
         'id',
+        'empresa',
+        'almacen',
         'calle',
         'numero_interno',
         'numero_externo',

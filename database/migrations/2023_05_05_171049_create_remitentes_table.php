@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('remitentes', function (Blueprint $table) {
             $table->id();
+            $table->string('empresa');
+            $table->string('almacen');
             $table->string('calle');
             $table->string('numero_interno');
             $table->string('numero_externo');
