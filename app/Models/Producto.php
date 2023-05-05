@@ -19,6 +19,7 @@ class Producto extends Model
         'id_marca',
         'serialisable',
         'caducidad',
+        'caducidad1',
         'sobresurtimiento',
         'serialisable_surtir',
         'requiere_inspeccion_calidad',
@@ -31,8 +32,7 @@ class Producto extends Model
         'peso',
         'fecha_descontinuo',
         'status',
-        'sku_compuesto',
-        'sku_proveedores'
+        
     ];
     public $timestamps = false;
 

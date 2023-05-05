@@ -18,6 +18,7 @@ class ProductoController extends Controller
             $producto -> id_marca = $request->id_marca;
             $producto -> serialisable = $request->serialisable;
             $producto -> caducidad = $request->caducidad;
+            $producto -> caducidad1 = $request->caducidad1;
             $producto -> sobresurtimiento = $request->sobresurtimiento;
             $producto -> serialisable_surtir = $request->serialisable_surtir;
             $producto -> requiere_inspeccion_calidad = $request->requiere_inspeccion_calidad;
@@ -28,10 +29,8 @@ class ProductoController extends Controller
             $producto -> id_config_lote = $request->id_config_lote;
             $producto -> id_unidad_de_medida = $request->id_unidad_de_medida;
             $producto -> peso = $request->peso;
-            $producto -> fecha_descontinuo = $request->fecha_descontinuo;
+             $producto -> fecha_descontinuo = $request->fecha_descontinuo;
             $producto -> status = $request->status;
-            $producto -> sku_compuesto = $request->sku_compuesto;
-            $producto -> sku_proveedores = $request->sku_proveedores;
             $producto -> save();
             
             return response([
@@ -73,6 +72,7 @@ class ProductoController extends Controller
             $producto -> id_marca = $request->id_marca;
             $producto -> serialisable = $request->serialisable;
             $producto -> caducidad = $request->caducidad;
+            $producto -> caducidad1 = $request->caducidad1;
             $producto -> sobresurtimiento = $request->sobresurtimiento;
             $producto -> serialisable_surtir = $request->serialisable_surtir;
             $producto -> requiere_inspeccion_calidad = $request->requiere_inspeccion_calidad;
@@ -85,8 +85,7 @@ class ProductoController extends Controller
             $producto -> peso = $request->peso;
             $producto -> fecha_descontinuo = $request->fecha_descontinuo;
             $producto -> status = $request->status;
-            $producto -> sku_compuesto = $request->sku_compuesto;
-            $producto -> sku_proveedores = $request->sku_proveedores;
+        
             $producto -> save();
             
             return response([
