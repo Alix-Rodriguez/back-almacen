@@ -162,3 +162,10 @@ Route::get('listar-centrocosto','App\Http\Controllers\CentrocostosController@lis
 Route::put('/actualizar-centrocosto/{id}','App\Http\Controllers\CentrocostosController@actualizarCentrocosto');
 Route::delete('delete-centrocosto/{id}', 'App\Http\Controllers\CentrocostosController@deleteCentrocosto');
 
+//API Remitente
+Route::post('save-remitente','App\Http\Controllers\RemitenteController@saveRemitente');
+Route::get('listar-remitente','App\Http\Controllers\RemitenteController@listarRemitente');
+Route::put('/actualizar-remitente/{id}','App\Http\Controllers\RemitenteController@actualizarRemitente');
+Route::delete('delete-remitente/{id}', 'App\Http\Controllers\RemitenteController@deleteRemitente');
+
+
