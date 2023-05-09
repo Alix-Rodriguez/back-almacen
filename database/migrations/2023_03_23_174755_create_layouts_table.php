@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('id_zona')->nullable();
             $table->integer('id_rack')->nullable();
             $table->integer('id_nivel')->nullable();
-            $table->integer('id_localidad')->nullable();
+            $table->integer('id_localidad')->nullable() ;
             $table->timestamps();
         });
     }

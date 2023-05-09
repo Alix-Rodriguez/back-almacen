@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('archivo_img');
             $table->string('status');
             $table->string('sistema');
-            $table->integer('impresion');
+            $table->integer('impresion')->nullable();
             $table->timestamps();
         });
     }
