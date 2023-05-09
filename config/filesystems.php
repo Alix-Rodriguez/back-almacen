@@ -56,6 +56,13 @@ return [
             'throw' => false,
         ],
 
+        'images_base64' => [
+            'driver' => 'local',
+            'root' => storage_path('app/images_base64'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*
