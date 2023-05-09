@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('etiquetados', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('archivo_img');
+            $table->binary('archivo_img');
             $table->string('status');
             $table->string('sistema');
             $table->integer('impresion')->nullable();
