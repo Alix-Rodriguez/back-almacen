@@ -14,6 +14,7 @@ class EtiquetadoController extends Controller
         //try{
             $etiquetado = new Etiquetado();
             $etiquetado -> nombre = $request -> nombre;
+            $etiquetado -> archivo_img = $request -> archivo_img;
             if ($request->hasFile('archivo_img')){
                 $imagen = $request -> file('archivo_img');
                 $nombre_imagen = Str::slug($request->archivo_img).".".$imagen->guessExtension();
