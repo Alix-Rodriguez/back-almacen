@@ -171,4 +171,5 @@ Route::delete('delete-remitente/{id}', 'App\Http\Controllers\RemitenteController
 
 //API etiquetados
 Route::post('save-etiquetado','App\Http\Controllers\EtiquetadoController@saveEtiquetado');
+Route::get('listar-etiquetado','App\Http\Controllers\EtiquetadoController@listarEtiquetado');
 
