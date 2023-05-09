@@ -15,12 +15,12 @@ class EtiquetadoController extends Controller
             $etiquetado = new Etiquetado();
             $etiquetado -> nombre = $request -> nombre;
             $etiquetado -> archivo_img = $request -> archivo_img;
-            if ($request->hasFile('archivo_img')){
-                $imagen = $request -> file('archivo_img');
-                $nombre_imagen = Str::slug($request->archivo_img).".".$imagen->guessExtension();
-                $ruta = public_path('img/etiquetado/');
-                $etiquetado ->imagen = $nombre_imagen;
-            }
+            if ($imagen = $request->file('archivo_img')):
+                $rutaGuardarImg = 'imagen/';
+                $archivo_imagen = date('YmdHis').".". $imagen ->getClientOriginalExtension();
+                $imagen->move($rutaGuardarImg,$archivo_imagen);
+                $etiquetado['archivo_img'] = "$archivo_imagen";
+            endif;
             $etiquetado -> status = $request -> status;
             $etiquetado -> sistema = $request -> sistema;
             $etiquetado -> impresion = $request -> impresion;
