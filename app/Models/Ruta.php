@@ -13,6 +13,7 @@ class Ruta extends Model
 
     protected $filltable = [
         'id',
+        'nombre_ruta',
         'empresa',
         'almacen',
         'codigo_postal_inicio',

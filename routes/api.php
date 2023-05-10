@@ -97,6 +97,7 @@ Route::post('save-paises','App\Http\Controllers\PaisController@savePaises');
 Route::get('listar-paises','App\Http\Controllers\PaisController@listarPaises');
 
 
+
 //api marca
 Route::post('save-marca','App\Http\Controllers\MarcaController@saveMarcas');
 Route::get('listar-marca','App\Http\Controllers\MarcaController@listarMarcas');
@@ -170,6 +171,7 @@ Route::delete('delete-remitente/{id}', 'App\Http\Controllers\RemitenteController
 
 //API etiquetados
 Route::post('save-etiquetado','App\Http\Controllers\EtiquetadoController@saveEtiquetado');
+Route::get('listar-etiquetado','App\Http\Controllers\EtiquetadoController@listarEtiquetado');
 
 //api de kitting
 Route::post('save-kitting','App\Http\Controllers\KittingController@saveKitting');
