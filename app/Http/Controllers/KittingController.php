@@ -4,12 +4,32 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use app\Models\Kitting;
+use App\Models\Kitting;
 use Exception;
 use Illuminate\Support\Facades\DB;
 
 class KittingController extends Controller
 {
+    public function saveKitting(Request $request){
+        //try{
+            $kitting = new Kitting();
+            $kitting -> id_producto = $request -> id_producto;
+            $kitting -> id_kitting = $request -> id_kitting;
+            $kitting ->save();
+            return response([
+                "status" => 200,
+                "msn" => 'Se ha guardado satisfactoriamente'
+            ]);
+        /* }catch(Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guardado - Error'
+            ]);
+        } */
+    }
+
+
+
     public function listarKitting(){
         try{
             $resultado = DB::table('kittings')

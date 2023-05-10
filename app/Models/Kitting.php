@@ -13,6 +13,7 @@ class Kitting extends Model
 
     protected $fillable = [
         'id',
-        'id_kitting',
+        'id_producto',
+        'id_kitting'
     ];
 }
