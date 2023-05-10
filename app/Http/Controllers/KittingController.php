@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 class KittingController extends Controller
 {
     public function saveKitting(Request $request){
-        //try{
+        try{
             $kitting = new Kitting();
             $kitting -> id_producto = $request -> id_producto;
             $kitting -> id_kitting = $request -> id_kitting;
@@ -20,12 +20,12 @@ class KittingController extends Controller
                 "status" => 200,
                 "msn" => 'Se ha guardado satisfactoriamente'
             ]);
-        /* }catch(Exception $e){
+        }catch(Exception $e){
             return response([
                 "status" => 400,
                 "msn" => 'No se ha guardado - Error'
             ]);
-        } */
+        }
     }
 
 
