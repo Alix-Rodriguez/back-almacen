@@ -19,20 +19,21 @@ class Producto extends Model
         'id_marca',
         'serialisable',
         'caducidad',
-        'caducidad1',
+        // 'caducidad1',
         'sobresurtimiento',
         'serialisable_surtir',
         'requiere_inspeccion_calidad',
         'requiere_fecha_cadu',
         'numero_parte',
         'requiere_lote',
-        'lote_compuesto',
+        // 'lote_compuesto',
         'id_config_lote',
         'id_unidad_de_medida',
         'peso',
         'fecha_descontinuo',
         'status',
-        
+        'kitting',
+        // 'sku_proveedores'
     ];
     public $timestamps = false;
 

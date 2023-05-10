@@ -173,3 +173,5 @@ Route::delete('delete-remitente/{id}', 'App\Http\Controllers\RemitenteController
 Route::post('save-etiquetado','App\Http\Controllers\EtiquetadoController@saveEtiquetado');
 Route::get('listar-etiquetado','App\Http\Controllers\EtiquetadoController@listarEtiquetado');
 
+//api de kitting
+Route::get('listar-kitting','App\Http\Controllers\KittingController@listarKitting');
