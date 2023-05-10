@@ -31,7 +31,7 @@ class Producto extends Model
         'peso',
         'fecha_descontinuo',
         'status',
-        'sku_compuesto',
+        'kitting',
         'sku_proveedores'
     ];
     public $timestamps = false;

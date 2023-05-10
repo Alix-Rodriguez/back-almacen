@@ -30,7 +30,7 @@ class ProductoController extends Controller
             $producto -> peso = $request->peso;
             $producto -> fecha_descontinuo = $request->fecha_descontinuo;
             $producto -> status = $request->status;
-            $producto -> sku_compuesto = $request->sku_compuesto;
+            $producto -> kitting = $request->kitting;
             $producto -> sku_proveedores = $request->sku_proveedores;
             $producto -> save();
             
