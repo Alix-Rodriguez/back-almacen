@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 class RecepcionprocesarController extends Controller
 {
     public function saveRecepcionprocesar(Request $request){
-        //try{
+        try{
             $recepcionprocesar = new Recepcionprocesar();
             $recepcionprocesar -> id_almacen = $request ->id_almacen;
             $recepcionprocesar -> id_empresas = $request ->id_empresas;
@@ -22,20 +22,20 @@ class RecepcionprocesarController extends Controller
                 "status"=> 200,
                 "msn" =>'Se ha guardado satisfactoriamente'
             ]);
-         /* }catch(Exception $e){
+         }catch(Exception $e){
             return response([
                 "status"=> 400,
                 "msn" =>'No se ha guardado - Error'
             ]);
-        }  */
+        } 
     }
 
     public function listarRecepcionprocesar(){
-        //try{
+        try{
             $recepcionprocesar = DB::table('recepcion_procesar')
             ->leftJoin('almacens','almacens.id', '=', 'recepcion_procesar.id_almacen' )
             ->leftJoin('empresas','empresas.id', '=', 'recepcion_procesar.id_empresas')
-            ->select('recepcion_procesar.id as id','almacens.id as id_almacen', 'almacens.nombre as nombre_almacen',
+            ->select('recepcion_procesar.id as id','recepcion_procesar.status as status','almacens.id as id_almacen', 'almacens.nombre as nombre_almacen',
             'empresas.id as empresas_id','empresas.nombre_empresa as nombre_empresa',
             'empresas.created_at as fechaCreada_empresa','recepcion_procesar.created_at as creado')
             ->get();
@@ -43,12 +43,12 @@ class RecepcionprocesarController extends Controller
                             "status" =>200 ,
                             "data" => $recepcionprocesar
                         ]);
-                    /* }catch(Exception $e){
+                    }catch(Exception $e){
                         return response([
                             "status" => 400,
                             "msn" => 'No se ha guardado - error'
                         ]);
-                } */    
+                }    
     }
     public function deleteRecepcionprocesar($id){
         try{
