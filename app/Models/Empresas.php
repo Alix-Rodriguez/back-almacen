@@ -16,7 +16,6 @@ protected $filltable = [
     'centro_costo',
     'logo_empresa',
     'nif_empresa',
-
 ];
 
 }

@@ -35,7 +35,8 @@ class EmpresasController extends Controller
     public function listarEmpresas(){
         try{
 
-            $empresa = Empresas::all();
+            $empresa = Empresas::all(['id','nombre_empresa','direccion_empresa',
+            'centro_costo','logo_empresa','nif_empresa','created_at as creado']);
     
             return response([
                 "status" => 200,
