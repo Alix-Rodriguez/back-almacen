@@ -188,3 +188,9 @@ Route::post('save-recepcion','App\Http\Controllers\RecepcionController@saveRecep
 Route::get('listar-recepcion','App\Http\Controllers\RecepcionController@listarRecepcion');
 Route::put('/actualizar-recepcion/{id}','App\Http\Controllers\RecepcionController@actualizarRecepcion');
 Route::delete('delete-recepcion/{id}', 'App\Http\Controllers\RecepcionController@deleteRecepcion');
+
+//API Recepcion Procesar
+Route::post('save-recepcionprocesar','App\Http\Controllers\RecepcionprocesarController@saveRecepcionprocesar');
+Route::get('listar-recepcionprocesar','App\Http\Controllers\RecepcionprocesarController@listarRecepcionprocesar');
+Route::put('/actualizar-recepcionprocesar/{id}','App\Http\Controllers\RecepcionprocesarController@actualizarRecepcionprocesar');
+Route::delete('delete-recepcionprocesar/{id}', 'App\Http\Controllers\RecepcionprocesarController@deleteRecepcionprocesar');

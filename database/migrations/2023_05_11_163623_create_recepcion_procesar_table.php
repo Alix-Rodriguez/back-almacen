@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('recepcion_procesar_create', function (Blueprint $table) {
+        Schema::create('recepcion_procesar', function (Blueprint $table) {
             $table->id();
             $table->integer('id_empresas');
-            $table->integer('almacen');
+            $table->integer('id_almacen');
             $table->string('status');
             $table->timestamps();
         });
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('recepcion_procesar_create');
+        Schema::dropIfExists('recepcion_procesar');
     }
 };
