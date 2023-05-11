@@ -18,6 +18,7 @@ class OrdenCompraController extends Controller
             $ordencompra -> fecha = $request-> fecha;
             $ordencompra -> id_centro_costo = $request-> id_centro_costo;
             $ordencompra -> central = $request-> central;
+            $ordencompra -> tipo_de_orden = $request-> tipo_de_orden;
             $ordencompra -> indicaciones = $request -> indicaciones;
             $ordencompra -> observaciones = $request -> observaciones;
             $ordencompra -> save();
@@ -35,7 +36,7 @@ class OrdenCompraController extends Controller
 
     public function listarOrdencompra(){
         try{
-            $ordencompra = Ordencompra::all(['referencia','fecha','central','indicaciones','observaciones']);
+            $ordencompra = Ordencompra::all(['tipo_de_orden','referencia','fecha','central','indicaciones','observaciones']);
             $ordencompra1 = DB::table('orden_compras')
             ->leftJoin('proveedores','proveedores.id', '=', 'orden_compras.id_proveedor' )
             ->leftJoin('centro_costos','centro_costos.id', '=', 'orden_compras.id_centro_costo')
@@ -79,6 +80,7 @@ class OrdenCompraController extends Controller
             $ordencompra -> fecha = $request-> fecha;
             $ordencompra -> id_centro_costo = $request-> id_centro_costo;
             $ordencompra -> central = $request-> central;
+            $ordencompra -> tipo_de_orden = $request-> tipo_de_orden;
             $ordencompra -> indicaciones = $request -> indicaciones;
             $ordencompra -> observaciones = $request -> observaciones;
             $ordencompra -> save();
