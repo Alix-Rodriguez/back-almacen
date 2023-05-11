@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('id_proveedor');
             $table->string('fecha');
             $table->integer('id_centro_costo');
+            $table->string('id_tipo_orden');
             $table->string('central');
             $table->string('indicaciones');
             $table->string('observaciones');
