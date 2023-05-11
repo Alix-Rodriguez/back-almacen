@@ -17,6 +17,7 @@ class OrdenCompra extends Model
         'id_proveedor',
         'fecha',
         'id_centro_costo',
+        'id_tipo_orden'
         'central',
         'tipo_de_orden',
         'indicaciones',

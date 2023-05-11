@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('fecha');
             $table->string('tipo_de_orden');
             $table->integer('id_centro_costo');
+            $table->string('id_tipo_orden');
             $table->string('central');
             $table->string('indicaciones');
             $table->string('observaciones');
