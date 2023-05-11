@@ -41,7 +41,7 @@ class OrdenCompraController extends Controller
             ->leftJoin('centro_costos','centro_costos.id', '=', 'orden_compras.id_centro_costo')
             ->select('orden_compras.id as id','proveedores.id as proveedor_id', 'proveedores.nombre_proveedor as nombre_proveedor',
             'centro_costos.id as centro_costos_id','centro_costos.descripcion as centro_costos_descripcion',
-            'orden_compras.referencia as referencia','orden_compras.fecha as fecha', 'orden_compras.id_tipo_orden as tipo_orden',
+            'orden_compras.referencia as referencia','orden_compras.fecha as fecha', 'orden_compras.id_tipo_orden as id_tipo_orden',
             'orden_compras.central as central', 'orden_compras.indicaciones as indicaciones', 
             'orden_compras.observaciones as observaciones')
             ->get();
@@ -90,12 +90,12 @@ class OrdenCompraController extends Controller
                 "status" =>200 ,
                 "msn" => 'Se ha guardado satisfactoriamente'
             ]);
-        }catch(Exception $e){
+         }catch(Exception $e){
             return response([
                 "status" => 400,
                 "msn" => 'No se ha guardado - error'
             ]);
-    }
+    } 
 }
 }
 

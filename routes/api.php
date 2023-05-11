@@ -182,3 +182,9 @@ Route::post('save-ordencompra','App\Http\Controllers\OrdenCompraController@saveO
 Route::get('listar-ordencompra','App\Http\Controllers\OrdenCompraController@listarOrdencompra');
 Route::put('/actualizar-ordencompra/{id}','App\Http\Controllers\OrdenCompraController@actualizarOrdencompra');
 Route::delete('delete-ordencompra/{id}', 'App\Http\Controllers\OrdenCompraController@deleteOrdencompra');
+
+//api Recepcion 
+Route::post('save-recepcion','App\Http\Controllers\RecepcionController@saveRecepcion');
+Route::get('listar-recepcion','App\Http\Controllers\RecepcionController@listarRecepcion');
+Route::put('/actualizar-recepcion/{id}','App\Http\Controllers\RecepcionController@actualizarRecepcion');
+Route::delete('delete-recepcion/{id}', 'App\Http\Controllers\RecepcionController@deleteRecepcion');
