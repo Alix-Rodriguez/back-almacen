@@ -19,7 +19,6 @@ class OrdenCompra extends Model
         'id_centro_costo',
         'id_tipo_orden',
         'central',
-        'tipo_de_orden',
         'indicaciones',
         'observaciones'
     ];

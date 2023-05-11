@@ -19,7 +19,6 @@ class OrdenCompraController extends Controller
             $ordencompra -> id_centro_costo = $request-> id_centro_costo;
             $ordencompra -> id_tipo_orden = $request-> id_tipo_orden;
             $ordencompra -> central = $request-> central;
-            $ordencompra -> tipo_de_orden = $request-> tipo_de_orden;
             $ordencompra -> indicaciones = $request -> indicaciones;
             $ordencompra -> observaciones = $request -> observaciones;
             $ordencompra -> save();
@@ -40,13 +39,12 @@ class OrdenCompraController extends Controller
             $ordencompra = DB::table('orden_compras')
             ->leftJoin('proveedores','proveedores.id', '=', 'orden_compras.id_proveedor' )
             ->leftJoin('centro_costos','centro_costos.id', '=', 'orden_compras.id_centro_costo')
-            ->select('orden_compras.id as id','proveedores.id as proveedor_id', 'proveedores.nombre_proveedor as nombre_proveedor',
-            'centro_costos.id as centro_costos_id','centro_costos.descripcion as centro_costos_descripcion',
-            'orden_compras.referencia as referencia','orden_compras.fecha as fecha', 'orden_compras.id_tipo_orden as tipo_orden',
+            ->select('orden_compras.id as id','proveedores.id as id_proveedor', 'proveedores.nombre_proveedor as nombre_proveedor',
+            'centro_costos.id as id_centro_costo','centro_costos.descripcion as centro_costos_descripcion',
+            'orden_compras.referencia as referencia','orden_compras.fecha as fecha', 'orden_compras.id_tipo_orden as id_tipo_orden',
             'orden_compras.central as central', 'orden_compras.indicaciones as indicaciones', 
             'orden_compras.observaciones as observaciones')
             ->get();
-            // $ordencompra2 = [$ordencompra,$ordencompra1];
             return response([
                             "status" =>200 ,
                             "data" => $ordencompra
@@ -85,7 +83,6 @@ class OrdenCompraController extends Controller
             $ordencompra -> id_centro_costo = $request-> id_centro_costo;
             $ordencompra -> id_tipo_orden = $request-> id_tipo_orden;
             $ordencompra -> central = $request-> central;
-            $ordencompra -> tipo_de_orden = $request-> tipo_de_orden;
             $ordencompra -> indicaciones = $request -> indicaciones;
             $ordencompra -> observaciones = $request -> observaciones;
             $ordencompra -> save();
