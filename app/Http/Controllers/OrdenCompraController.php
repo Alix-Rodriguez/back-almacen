@@ -35,9 +35,8 @@ class OrdenCompraController extends Controller
 }
 
     public function listarOrdencompra(){
-        //try{
-            //$ordencompra = Ordencompra::all(['referencia','fecha','central','indicaciones','observaciones']);
-            $ordencompra1 = DB::table('orden_compras')
+        try{
+            $ordencompra = DB::table('orden_compras')
             ->leftJoin('proveedores','proveedores.id', '=', 'orden_compras.id_proveedor' )
             ->leftJoin('centro_costos','centro_costos.id', '=', 'orden_compras.id_centro_costo')
             ->select('orden_compras.id as id','proveedores.id as proveedor_id', 'proveedores.nombre_proveedor as nombre_proveedor',
@@ -48,14 +47,14 @@ class OrdenCompraController extends Controller
             ->get();
             return response([
                             "status" =>200 ,
-                            "data" => $ordencompra1
+                            "data" => $ordencompra
                         ]);
-                    /* }catch(Exception $e){
+                    }catch(Exception $e){
                         return response([
                             "status" => 400,
                             "msn" => 'No se ha guardado - error'
                         ]);
-                } */      
+                }      
     }
 
     public function deleteOrdencompra($id){
