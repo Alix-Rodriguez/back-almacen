@@ -7,5 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class OrdenCompra extends Model
 {
+    public $table = 'orden_compras';
+    public $timestamps = false;
     use HasFactory;
+
+    protected $fillable = [
+        'id',
+        'referencia',
+        'id_proveedor',
+        'fecha',
+        'id_centro_costo',
+        'central',
+        'indicaciones',
+        'observaciones'
+    ];
 }

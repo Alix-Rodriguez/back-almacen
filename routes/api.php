@@ -176,3 +176,9 @@ Route::get('listar-etiquetado','App\Http\Controllers\EtiquetadoController@listar
 //api de kitting
 Route::post('save-kitting','App\Http\Controllers\KittingController@saveKitting');
 Route::get('listar-kitting','App\Http\Controllers\KittingController@listarKitting');
+
+//api de orden de compra
+Route::post('save-ordencompra','App\Http\Controllers\OrdenCompraController@saveOrdencompra');
+Route::get('listar-ordencompra','App\Http\Controllers\OrdenCompraController@listarOrdencompra');
+Route::put('/actualizar-ordencompra/{id}','App\Http\Controllers\OrdenCompraController@actualizarOrdencompra');
+Route::delete('delete-ordencompra/{id}', 'App\Http\Controllers\OrdenCompraController@deleteOrdencompra');
