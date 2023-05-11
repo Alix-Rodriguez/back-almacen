@@ -194,3 +194,9 @@ Route::post('save-recepcionprocesar','App\Http\Controllers\RecepcionprocesarCont
 Route::get('listar-recepcionprocesar','App\Http\Controllers\RecepcionprocesarController@listarRecepcionprocesar');
 Route::put('/actualizar-recepcionprocesar/{id}','App\Http\Controllers\RecepcionprocesarController@actualizarRecepcionprocesar');
 Route::delete('delete-recepcionprocesar/{id}', 'App\Http\Controllers\RecepcionprocesarController@deleteRecepcionprocesar');
+
+//API Recepcion ubicar y cerrar
+Route::post('save-recepcionUbicarcerrar','App\Http\Controllers\RecepcionUbicarcerrarController@saveUbicarcerrar');
+Route::get('listar-recepcionUbicarcerrar','App\Http\Controllers\RecepcionUbicarcerrarController@listarUbicarcerrar');
+Route::put('/actualizar-recepcionUbicarcerrar/{id}','App\Http\Controllers\RecepcionUbicarcerrarController@actualizarUbicarcerrar');
+Route::delete('delete-recepcionUbicarcerrar/{id}', 'App\Http\Controllers\RecepcionUbicarcerrarController@deleteUbicarcerrar');
