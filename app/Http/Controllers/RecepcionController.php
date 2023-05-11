@@ -37,7 +37,7 @@ class RecepcionController extends Controller
             ->leftJoin('empresas','empresas.id', '=', 'recepcions.id_empresas')
             ->select('recepcions.id as id','almacens.id as id_almacen', 'almacens.nombre as nombre_almacen',
             'empresas.id as empresas_id','empresas.nombre_empresa as nombre_empresa',
-            'recepcions.created_at as creado')
+            'empresas.created_at as fechaCreada_empresa','recepcions.created_at as creado')
             ->get();
             return response([
                             "status" =>200 ,
