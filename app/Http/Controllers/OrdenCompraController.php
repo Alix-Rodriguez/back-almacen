@@ -17,6 +17,7 @@ class OrdenCompraController extends Controller
             $ordencompra -> id_proveedor = $request-> id_proveedor;
             $ordencompra -> fecha = $request-> fecha;
             $ordencompra -> id_centro_costo = $request-> id_centro_costo;
+            $ordencompra -> id_tipo_orden = $request-> id_tipo_orden;
             $ordencompra -> central = $request-> central;
             $ordencompra -> tipo_de_orden = $request-> tipo_de_orden;
             $ordencompra -> indicaciones = $request -> indicaciones;
@@ -35,18 +36,20 @@ class OrdenCompraController extends Controller
 }
 
     public function listarOrdencompra(){
-         try{
-            $ordencompra = Ordencompra::all(['tipo_de_orden','referencia','fecha','central','indicaciones','observaciones']);
-            $ordencompra1 = DB::table('orden_compras')
+        try{
+            $ordencompra = DB::table('orden_compras')
             ->leftJoin('proveedores','proveedores.id', '=', 'orden_compras.id_proveedor' )
             ->leftJoin('centro_costos','centro_costos.id', '=', 'orden_compras.id_centro_costo')
-            ->select('proveedores.id as proveedor_id', 'proveedores.nombre_proveedor as nombre_proveedor',
-            'centro_costos.id as centro_costos_id','centro_costos.descripcion as centro_costos_descripcion')
+            ->select('orden_compras.id as id','proveedores.id as proveedor_id', 'proveedores.nombre_proveedor as nombre_proveedor',
+            'centro_costos.id as centro_costos_id','centro_costos.descripcion as centro_costos_descripcion',
+            'orden_compras.referencia as referencia','orden_compras.fecha as fecha', 'orden_compras.id_tipo_orden as tipo_orden',
+            'orden_compras.central as central', 'orden_compras.indicaciones as indicaciones', 
+            'orden_compras.observaciones as observaciones')
             ->get();
             // $ordencompra2 = [$ordencompra,$ordencompra1];
             return response([
                             "status" =>200 ,
-                            "data" => $ordencompra,$ordencompra1
+                            "data" => $ordencompra
                         ]);
                      }catch(Exception $e){
                          return response([
@@ -80,6 +83,7 @@ class OrdenCompraController extends Controller
             $ordencompra -> id_proveedor = $request-> id_proveedor;
             $ordencompra -> fecha = $request-> fecha;
             $ordencompra -> id_centro_costo = $request-> id_centro_costo;
+            $ordencompra -> id_tipo_orden = $request-> id_tipo_orden;
             $ordencompra -> central = $request-> central;
             $ordencompra -> tipo_de_orden = $request-> tipo_de_orden;
             $ordencompra -> indicaciones = $request -> indicaciones;
