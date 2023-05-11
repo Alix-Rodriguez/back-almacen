@@ -206,3 +206,9 @@ Route::post('save-recepcionOrdencerrada','App\Http\Controllers\RecepcionOrdencer
 Route::get('listar-recepcionOrdencerrada','App\Http\Controllers\RecepcionOrdencerradaController@listarOrdencerrada');
 Route::put('/actualizar-recepcionOrdencerrada/{id}','App\Http\Controllers\RecepcionOrdencerradaController@actualizarOrdencerrada');
 Route::delete('delete-recepcionOrdencerrada/{id}', 'App\Http\Controllers\RecepcionOrdencerradaController@deleteOrdencerrada');
+
+//API Recepcion No catalogados
+Route::post('save-recepcionNocatalogado','App\Http\Controllers\RecepcionNocatalogadoController@saveNocatalogado');
+Route::get('listar-recepcionNocatalogado','App\Http\Controllers\RecepcionNocatalogadoController@listarNocatalogado');
+Route::put('/actualizar-recepcionNocatalogado/{id}','App\Http\Controllers\RecepcionNocatalogadoController@actualizarNocatalogado');
+Route::delete('delete-recepcionNocatalogado/{id}', 'App\Http\Controllers\RecepcionNocatalogadoController@deleteNocatalogado');
