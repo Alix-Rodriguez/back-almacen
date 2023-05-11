@@ -13,15 +13,13 @@ return new class extends Migration
     {
         Schema::create('orden_compras', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
-            $table->string('descripcion');
-            $table->integer('numero_orden');
-            $table->integer('id_proveedor');
             $table->string('referencia');
+            $table->integer('id_proveedor');
+            $table->string('fecha');
             $table->integer('id_centro_costo');
-            $table->string('indicadores');
+            $table->string('central');
+            $table->string('indicaciones');
             $table->string('observaciones');
-            $table->string('id_almacen');
             $table->timestamps();
         });
     }
