@@ -12,7 +12,7 @@ class Recepcionprocesar extends Model
     protected $fillable = [
         'id',
         'id_empresas',
-        'almacen',
+        'id_almacen',
         'status'
     ];
 }
