@@ -87,6 +87,7 @@ class ProductoController extends Controller
             $producto -> peso = $request->peso;
             $producto -> fecha_descontinuo = $request->fecha_descontinuo;
             $producto -> status = $request->status;
+            $producto -> kitting = $request->kitting;
         
             $producto -> save();
             
