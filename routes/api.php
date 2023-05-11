@@ -200,3 +200,9 @@ Route::post('save-recepcionUbicarcerrar','App\Http\Controllers\RecepcionUbicarce
 Route::get('listar-recepcionUbicarcerrar','App\Http\Controllers\RecepcionUbicarcerrarController@listarUbicarcerrar');
 Route::put('/actualizar-recepcionUbicarcerrar/{id}','App\Http\Controllers\RecepcionUbicarcerrarController@actualizarUbicarcerrar');
 Route::delete('delete-recepcionUbicarcerrar/{id}', 'App\Http\Controllers\RecepcionUbicarcerrarController@deleteUbicarcerrar');
+
+//API Recepcion Ordenes cerradas
+Route::post('save-recepcionOrdencerrada','App\Http\Controllers\RecepcionOrdencerradaController@saveOrdencerrada');
+Route::get('listar-recepcionOrdencerrada','App\Http\Controllers\RecepcionOrdencerradaController@listarOrdencerrada');
+Route::put('/actualizar-recepcionOrdencerrada/{id}','App\Http\Controllers\RecepcionOrdencerradaController@actualizarOrdencerrada');
+Route::delete('delete-recepcionOrdencerrada/{id}', 'App\Http\Controllers\RecepcionOrdencerradaController@deleteOrdencerrada');
