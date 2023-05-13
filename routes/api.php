@@ -212,3 +212,10 @@ Route::post('save-recepcionNocatalogado','App\Http\Controllers\RecepcionNocatalo
 Route::get('listar-recepcionNocatalogado','App\Http\Controllers\RecepcionNocatalogadoController@listarNocatalogado');
 Route::put('/actualizar-recepcionNocatalogado/{id}','App\Http\Controllers\RecepcionNocatalogadoController@actualizarNocatalogado');
 Route::delete('delete-recepcionNocatalogado/{id}', 'App\Http\Controllers\RecepcionNocatalogadoController@deleteNocatalogado');
+
+//API Recepcion detallada 
+Route::post('save-programacionDetalllada','App\Http\Controllers\ProgramacionDetalleController@saveProgramacionDetalle');
+
+//API Recepcion progreso
+Route::post('save-ProgramacionProgreso','App\Http\Controllers\ProgramacionProgresoController@saveProgramacionProgreso');
+
