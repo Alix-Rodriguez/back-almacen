@@ -218,4 +218,5 @@ Route::post('save-programacionDetalllada','App\Http\Controllers\ProgramacionDeta
 
 //API Recepcion progreso
 Route::post('save-ProgramacionProgreso','App\Http\Controllers\ProgramacionProgresoController@saveProgramacionProgreso');
+Route::get('listar-ProgramacionProgreso','App\Http\Controllers\ProgramacionProgresoController@listarProgramacionProgreso');
 

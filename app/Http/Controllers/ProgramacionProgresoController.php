@@ -31,4 +31,28 @@ class ProgramacionProgresoController extends Controller
             ]);
         }
     }
+
+    public function listarProgramacionProgreso(){
+        try{
+
+            $PP = ProgramacionProgreso::all();
+    
+            return response([
+                "status" => 200,
+                "data" => $PP
+            ]);
+
+        }catch (Exception $e){
+            return response([
+                "status" => 400,
+                "msn" => 'No se ha guadardo - error'
+            ]);
+        }
+        
+    }
+
+
+
+
+
 }
