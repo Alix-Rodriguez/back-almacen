@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('id_proveedor');
             $table->integer('id_almacen');
             $table->integer('id_empresa');
-            $table->string('fecha')->nullable();
+            $table->date('fecha')->nullable();
             $table->string('indicaciones');
             $table->string('observacion');
             $table->timestamps();
