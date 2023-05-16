@@ -13,6 +13,9 @@ class RecepcionOrdencerradaSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $ordencerrada = [
+
+        ];
+        DB::table('recepcion_ordenescerradas')->insert($ordencerrada);
     }
 }

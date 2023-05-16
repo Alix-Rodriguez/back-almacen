@@ -13,6 +13,10 @@ class RecepcionNocatalogadoSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $nocatalogado = [
+            "id_almacen"=>1,
+            "id_empresas"=>1
+        ];
+        DB::table('recepcion_nocatalogado')->insert($nocatalogado);
     }
 }
