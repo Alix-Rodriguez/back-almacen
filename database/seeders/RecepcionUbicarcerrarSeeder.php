@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class RecepcionUbicarcerrarSeeder extends Seeder
 {
@@ -12,6 +13,10 @@ class RecepcionUbicarcerrarSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $ubicarcerrar = [
+            "id_almacen"=>1,
+            "id_empresas"=>1
+        ];
+        DB::table('recepcion_ubicarcerrar')->insert($ubicarcerrar);
     }
 }

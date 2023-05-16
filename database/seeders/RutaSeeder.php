@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class RutaSeeder extends Seeder
 {
@@ -12,6 +13,13 @@ class RutaSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $ruta = [
+            "nombre_ruta"=>"hola",
+            "empresa"=>1,
+            "almacen"=>1,
+            "codigo_postal_inicio"=> "prueba",
+            "codigo_postal_fin"=>"prueba2"
+        ];
+        DB::table('rutas')->insert($ruta);
     }
 }

@@ -14,7 +14,9 @@ class RecepcionOrdencerradaSeeder extends Seeder
     public function run(): void
     {
         $ordencerrada = [
-
+            "id_almacen"=>1,
+            "id_empresas"=>1,
+            "status"=>"activo"
         ];
         DB::table('recepcion_ordenescerradas')->insert($ordencerrada);
     }
