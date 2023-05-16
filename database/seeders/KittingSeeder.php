@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class KittingSeeder extends Seeder
 {
@@ -12,6 +13,10 @@ class KittingSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $kitting = [
+            "id_kitting"=>"",
+            "id_producto"=>1
+        ];
+        DB::table('kittings')->insert($kitting);
     }
 }

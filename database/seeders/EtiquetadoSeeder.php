@@ -15,10 +15,10 @@ class EtiquetadoSeeder extends Seeder
     {
         $etiquetado = [
             "nombre"=>"hoalasa",
-            "direccion_empresa"=>"Calle 1",
-            "centro_costo"=>"432435354 1",
-            "archivo_img"=>"images",
-            "nif_empresa"=>"453233455 1"
+            "archivo_img"=>"",
+            "status"=>" activo",
+            "sistema"=>"453233455 1",
+            "impresion" => 1
         ];
         DB::table('etiquetados')->insert($etiquetado);
     }
