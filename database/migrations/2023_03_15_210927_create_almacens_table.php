@@ -17,10 +17,10 @@ return new class extends Migration
             $table->integer('tipo');
             $table->integer('picking')->nullable();
             $table->integer('etiqueta_entrada');
-            $table->integer('usa_zona');
-            $table->integer('usa_rack');
-            $table->integer('usa_nivel');
-            $table->integer('usa_localidad');
+            $table->integer('usa_zona')->nullable();
+            $table->integer('usa_rack')->nullable();
+            $table->integer('usa_nivel')->nullable();
+            $table->integer('usa_localidad')->nullable();
             $table->integer('schedule');
             $table->integer('status');
             $table->string('contacto');
