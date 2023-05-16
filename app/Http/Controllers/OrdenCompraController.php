@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 class OrdenCompraController extends Controller
 {
     public function saveOrdencompra(Request $request){
-        //try{
+        try{
             $ordencompra = new OrdenCompra();
             $ordencompra -> referencia = $request-> referencia;
             $ordencompra -> id_proveedor = $request-> id_proveedor;
@@ -26,12 +26,12 @@ class OrdenCompraController extends Controller
                 "status" =>200 ,
                 "msn" => 'Se ha guardado satisfactoriamente'
             ]);
-        /* }catch(Exception $e){
+        }catch(Exception $e){
             return response([
                 "status" => 400,
                 "msn" => 'No se ha guardado - error'
             ]);
-        } */
+        }
     }
     
     public function listarOrdencompra(){

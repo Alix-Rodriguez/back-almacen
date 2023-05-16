@@ -34,10 +34,10 @@ return new class extends Migration
             $table->string('email');
             $table->integer('usar_ubicacion');
             $table->integer('folio_ubicacion');
-            $table->integer('zona_qa');
-            $table->integer('rack_qa');
-            $table->integer('nivel_qa');
-            $table->integer('localidad_qa');
+            $table->integer('zona_qa')->nullable();
+            $table->integer('rack_qa')->nullable();
+            $table->integer('nivel_qa')->nullable();
+            $table->integer('localidad_qa')->nullable();
             $table->string('nombre');
         });
     }
