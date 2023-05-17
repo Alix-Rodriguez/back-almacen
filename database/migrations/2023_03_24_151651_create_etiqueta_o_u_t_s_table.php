@@ -14,10 +14,8 @@ return new class extends Migration
         Schema::create('etiqueta_o_u_t_s', function (Blueprint $table) {
             $table->id();
             $table->integer('id_almacen');
-            $table->integer('sku');
-            $table->string('nom_etiqueta');
-            $table->string('archivo_img');
-            $table->integer('status');
+            $table->integer('id_empresa');
+            $table->date('fecha_picking');
             $table->timestamps();
         });
     }

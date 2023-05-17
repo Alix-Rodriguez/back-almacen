@@ -220,3 +220,14 @@ Route::post('save-programacionDetalllada','App\Http\Controllers\ProgramacionDeta
 Route::post('save-ProgramacionProgreso','App\Http\Controllers\ProgramacionProgresoController@saveProgramacionProgreso');
 Route::get('listar-ProgramacionProgreso','App\Http\Controllers\ProgramacionProgresoController@listarProgramacionProgreso');
 
+//API Etiqueta entrante (IN)
+Route::post('save-etiquetain','App\Http\Controllers\EtiquetainController@saveEtiquetain');
+Route::get('listar-etiquetain','App\Http\Controllers\EtiquetainController@listarEtiquetain');
+Route::put('actualizar-etiquetain/{id}','App\Http\Controllers\EtiquetainController@actualizarEtiquetain');
+Route::delete('delete-etiquetain/{id}','App\Http\Controllers\EtiquetainController@deleteEtiquetain');
+
+//API  Etiquete saliente (OUT)
+Route::post('save-etiquetaout','App\Http\Controllers\EtiquetaoutController@saveEtiquetaout');
+Route::get('listar-etiquetaout','App\Http\Controllers\EtiquetaoutController@listarEtiquetaout');
+Route::put('actualizar-etiquetaout/{id}','App\Http\Controllers\EtiquetaoutController@actualizarEtiquetaout');
+Route::delete('delete-etiquetaout/{id}','App\Http\Controllers\EtiquetaoutController@deleteEtiquetaout');
