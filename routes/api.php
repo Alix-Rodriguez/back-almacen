@@ -231,3 +231,9 @@ Route::post('save-etiquetaout','App\Http\Controllers\EtiquetaoutController@saveE
 Route::get('listar-etiquetaout','App\Http\Controllers\EtiquetaoutController@listarEtiquetaout');
 Route::put('actualizar-etiquetaout/{id}','App\Http\Controllers\EtiquetaoutController@actualizarEtiquetaout');
 Route::delete('delete-etiquetaout/{id}','App\Http\Controllers\EtiquetaoutController@deleteEtiquetaout');
+
+//API  movimiento busqueda producto
+Route::post('save-busquedaProducto','App\Http\Controllers\MovimientoproductoController@saveMovimientoproducto');
+Route::get('listar-busquedaProducto','App\Http\Controllers\MovimientoproductoController@listarMovimientoproducto');
+Route::put('actualizar-busquedaProducto/{id}','App\Http\Controllers\MovimientoproductoController@actualizarMovimientoproducto');
+Route::delete('delete-busquedaProducto/{id}','App\Http\Controllers\MovimientoproductoController@deleteMovimientoproducto');
