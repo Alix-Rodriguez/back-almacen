@@ -14,8 +14,7 @@ class MovimientoproductoController extends Controller
         try{
             $producto = new MovimientoProducto();
             $producto -> sku = $request-> sku;
-/*             $producto -> unidad_medida = $request-> unidad_medida;
- */            $producto -> save();
+            $producto -> save();
             return response([
                 "status" => 200,
                 "msn" => 'Se ha guardado satisfactoriamente'

@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('movimientos_productos', function (Blueprint $table) {
             $table->id();
             $table->integer('sku');
-/*             $table->integer('unidad_medida');
- */        });
+        });
     }
 
     /**

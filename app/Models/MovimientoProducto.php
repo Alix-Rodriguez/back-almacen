@@ -14,6 +14,5 @@ class MovimientoProducto extends Model
     protected $filltable = [
             'id',
             'sku',
-/*             'unidad_medida'
- */    ];
+    ];
 }
