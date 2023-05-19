@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('numero_interno');
             $table->strig('colonia');
             $table->string('cp');
-            $table->strig('delegacion_municipio');
+            $table->string('delegacion_municipio');
             $table->string('telefono');
             $table->string('email');
             $table->integer('usar_ubicacion');
