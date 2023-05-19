@@ -5,12 +5,58 @@ namespace App\Http\Controllers;
 use App\Models\Almacen;
 use Exception;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class AlmacenController extends Controller
 {
     public function listarAlmacenes(){
         try{
-            $almacen = Almacen::all();
+            $almacen = DB::table('almacens')
+            ->leftJoin(
+                'empresas','empresas.id',
+                '=',
+                'almacens.descuento_almacen'
+            )
+            ->leftJoin(
+                'delegacions','delegacions.id',
+                '=',
+                'almacens.delegacion_municipio'
+            )
+            ->leftJoin(
+                'colonias','colonias.id',
+                '=',
+                'almacens.colonia'
+            )
+            ->select(
+                'almacens.id',
+                'empresas.nombre_empresa as descuento_almacen ',
+                'almacens.tipo',
+                'almacens.picking',
+                'almacens.etiqueta_entrada',
+                'almacens.usa_zona',
+                'almacens.usa_rack',
+                'almacens.usa_nivel',
+                'almacens.usa_localidad',
+                'almacens.schedule',
+                'almacens.status',
+                'almacens.contacto',
+                'almacens.calle',
+                'almacens.numero_exterior',
+                'almacens.numero_interno',
+                'colonias.descripcion as colonia ',
+                'almacens.cp',
+                'delegacions.descripcion as delegacion_municipio',
+                'almacens.telefono',
+                'almacens.email',
+                'almacens.usar_ubicacion',
+                'almacens.folio_ubicacion',
+                'almacens.zona_qa',
+                'almacens.rack_qa',
+                'almacens.nivel_qa',
+                'almacens.localidad_qa',
+                'almacens.nombre'
+
+            )
+            ->get();
     
             return response([
                 "status" => 200,
