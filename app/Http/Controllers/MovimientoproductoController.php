@@ -14,8 +14,8 @@ class MovimientoproductoController extends Controller
         try{
             $producto = new MovimientoProducto();
             $producto -> sku = $request-> sku;
-            $producto -> unidad_medida = $request-> unidad_medida;
-            $producto -> save();
+/*             $producto -> unidad_medida = $request-> unidad_medida;
+ */            $producto -> save();
             return response([
                 "status" => 200,
                 "msn" => 'Se ha guardado satisfactoriamente'
@@ -31,7 +31,7 @@ class MovimientoproductoController extends Controller
         try{
             $producto = DB::table('movimientos_productos')
             ->leftJoin('productos','productos.id', '=', 'movimientos_productos.sku')
-            ->leftJoin('unidad_medida', 'unidad_medida.id', '=', 'movimientos_productos.unidad_medida')
+            ->leftJoin('unidad_medida', 'unidad_medida.id', '=', 'productos.id_unidad_de_medida')
             ->select('movimientos_productos.id as id','productos.id as id_producto','productos.sku as sku',
             'productos.descripcion', 'productos.numero_parte as numero_parte', 'unidad_medida.descripcion as unidad_medida')
             ->get();
@@ -66,8 +66,8 @@ class MovimientoproductoController extends Controller
         try{
             $producto =  MovimientoProducto::findOrfail($request->id);
             $producto -> sku = $request-> sku;
-            $producto -> unidad_medida = $request-> unidad_medida;
-            $producto -> save();
+/*             $producto -> unidad_medida = $request-> unidad_medida;
+ */            $producto -> save();
             return response([
                 "status" => 200,
                 "msn" => 'Se ha actualizado satisfactoriamente'
