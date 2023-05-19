@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('requiere_lote')->nullable();
             // $table->integer('lote_compuesto')->nullable();
             $table->string('id_config_lote')->nullable();
-            $table->string('id_unidad_de_medida');
+            $table->integer('id_unidad_de_medida');
             $table->string('peso');
             $table->date('fecha_descontinuo');
             $table->string('status');
