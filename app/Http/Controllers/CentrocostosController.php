@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Centrocosto;
 use Exception;
+use Illuminate\Support\Facades\DB;
 class CentrocostosController extends Controller
 {
  public function saveCentrocosto(Request $request){
@@ -32,7 +33,31 @@ class CentrocostosController extends Controller
 
  public function listarCentrocosto(){
     try{
-        $centro = Centrocosto::all();
+        $centro = DB::table('centro_costos')
+        ->leftJoin(
+            'empresas','empresas.id',
+            '=',
+            'centro_costos.id_empresa'
+        )
+        ->leftJoin(
+            'clientes','clientes.id',
+            '=',
+            'centro_costos.id_cliente'
+        )
+        ->leftJoin(
+            'marcas','marcas.id',
+            '=',
+            'centro_costos.id_marca'
+        )
+        ->select(
+            'centro_costos.id',
+            'empresas.nombre_empresa',
+            'clientes.nombre_cliente',
+            'marcas.marca',
+            'centro_costos.id_ubicacion_elsea',
+            'centro_costos.descripcion'
+        )
+        ->get();
         return response([
             "status" => 200,
             "data" => $centro
