@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->string('id_empresa');
+            $table->integer('id_empresa');
             $table->string('sku');
             $table->string('descripcion');
             $table->string('modelo');
-            $table->string('id_linea_producto');
-            $table->string('id_marca');
+            $table->integer('id_linea_producto');
+            $table->integer('id_marca');
             $table->string('serialisable');
             $table->string('caducidad')->nullable();
             $table->string('sobresurtimiento');
@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('numero_parte');
             $table->string('requiere_lote')->nullable();
             // $table->integer('lote_compuesto')->nullable();
-            $table->string('id_config_lote')->nullable();
+            $table->integer('id_config_lote')->nullable();
             $table->integer('id_unidad_de_medida');
             $table->string('peso');
             $table->date('fecha_descontinuo');
