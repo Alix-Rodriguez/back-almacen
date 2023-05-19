@@ -16,16 +16,6 @@ class AlmacenController extends Controller
                 '=',
                 'almacens.descuento_almacen'
             )
-            ->leftJoin(
-                'delegacions','delegacions.id',
-                '=',
-                'almacens.delegacion_municipio'
-            )
-            ->leftJoin(
-                'colonias','colonias.id',
-                '=',
-                'almacens.colonia'
-            )
             ->select(
                 'almacens.id',
                 'empresas.nombre_empresa as descuento_almacen ',
@@ -42,9 +32,9 @@ class AlmacenController extends Controller
                 'almacens.calle',
                 'almacens.numero_exterior',
                 'almacens.numero_interno',
-                'colonias.descripcion as colonia ',
+                'almacens.colonia',
                 'almacens.cp',
-                'delegacions.descripcion as delegacion_municipio',
+                'almacens.delegacion_municipio',
                 'almacens.telefono',
                 'almacens.email',
                 'almacens.usar_ubicacion',
