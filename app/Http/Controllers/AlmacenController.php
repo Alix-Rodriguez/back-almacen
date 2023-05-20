@@ -17,14 +17,14 @@ class AlmacenController extends Controller
                 'almacens.descuento_almacen'
             )
             ->leftJoin(
-                'delegacions','delegacions.id',
+                'delegacions','delegacions.code_delegacion',
                 '=',
                 'almacens.delegacion_municipio'
             )
             ->leftJoin(
-                'colonias','colonias.id',
+                'colonias','colonias.code_delegacion',
                 '=',
-                'almacens.colonia'
+                'delegacions.code_delegacion'
             )
             ->select(
                 'almacens.id',
