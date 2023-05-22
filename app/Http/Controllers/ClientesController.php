@@ -15,17 +15,13 @@ class ClientesController extends Controller
     
         try{
             $cliente = new Clientes();
-            $cliente -> clave_cliente = $request->clave_cliente;
-            $cliente -> nombre = $request->nombre;
+            $cliente -> nombre_cliente = $request->nombre_cliente;
             $cliente -> nif = $request->nif;
             $cliente -> calle = $request->calle;
             $cliente -> colonia = $request->colonia;
-            //$cliente -> direccion = $request->direccion;
             $cliente -> pais = $request->pais;
-            //$cliente -> ciudad = $request->ciudad;
             $cliente -> telefono = $request->telefono;
             $cliente -> telefono_opcional = $request->telefono_opcional;
-            //$cliente -> contribuyente = $request->contribuyente;
             $cliente -> codigoPostal = $request->codigoPostal;
             $cliente -> email = $request->email;
             $cliente -> contacto = $request->contacto;
@@ -106,17 +102,13 @@ class ClientesController extends Controller
     public function  actualizarCliente(Request $request){
             try{
             $cliente = Clientes::findOrfail($request->id);
-            $cliente -> nombre = $request->nombre;
+            $cliente -> nombre_cliente = $request->nombre_cliente;
             $cliente -> nif = $request->nif;
-            //$cliente -> direccion = $request->direccion;
-            $cliente -> pais = $request->pais;
-            //$cliente -> ciudad = $request->ciudad;
-            $cliente -> telefono = $request->telefono;
-            $cliente -> telefono_opcional = $request->telefono_opcional;
-            //$cliente -> contribuyente = $request->contribuyente;
-            $cliente -> clave_cliente = $request->clave_cliente;
             $cliente -> calle = $request->calle;
             $cliente -> colonia = $request->colonia;
+            $cliente -> pais = $request->pais;
+            $cliente -> telefono = $request->telefono;
+            $cliente -> telefono_opcional = $request->telefono_opcional;
             $cliente -> codigoPostal = $request->codigoPostal;
             $cliente -> email = $request->email;
             $cliente -> contacto = $request->contacto;

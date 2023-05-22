@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Producto;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductoController extends Controller
 {
@@ -50,7 +51,19 @@ class ProductoController extends Controller
 
     public function listarProducto(){
         try{
-            $producto = Producto::all();
+            $producto = DB::table('productos')
+            ->leftJoin('empresas','empresas.id', '=', 'productos.id_empresa')
+            ->leftJoin('linea_productos','linea_productos.id','=', 'productos.id_empresa')
+            ->leftJoin('marcas','marcas.id','=', 'productos.id_marca')
+            ->leftJoin('configs_lote','configs_lote.id','=', 'productos.id_config_lote')
+            ->leftJoin('unidad_medida','unidad_medida.id','=', 'productos.id_unidad_de_medida')
+            ->select('productos.id','empresas.nombre_empresa as id_empresa','productos.sku', 'productos.descripcion',
+            'productos.modelo', 'linea_productos.descripcion as id_linea_producto','marcas.marca as id_marca',
+            'productos.serialisable', 'productos.caducidad','productos.sobresurtimiento','productos.serialisable_surtir',
+            'productos.requiere_inspeccion_calidad','productos.requiere_fecha_cadu','productos.numero_parte',
+            'productos.requiere_lote','configs_lote.descripcion as id_config_lote','unidad_medida.descripcion as id_unidad_de_medida',
+            'productos.peso','productos.fecha_descontinuo','productos.status','productos.kitting')
+            ->get();
             return response([
                 "status" => 200,
                 "data" => $producto

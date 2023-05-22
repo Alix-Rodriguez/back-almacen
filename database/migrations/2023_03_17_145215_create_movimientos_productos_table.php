@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('etiqueta_i_n_s', function (Blueprint $table) {
+        Schema::create('movimientos_productos', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_almacen');
-            $table->integer('id_empresa');
-            $table->date('fecha');
-            $table->string('referencia');
-            $table->timestamps();
+            $table->integer('sku');
         });
     }
 
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('etiqueta_i_n_s');
+        Schema::dropIfExists('movimientos_productos');
     }
 };

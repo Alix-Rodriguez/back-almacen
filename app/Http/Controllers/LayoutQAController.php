@@ -190,9 +190,7 @@ class LayoutQAController extends Controller
     }
 
     public function listarLayoutqa(){
-        // try{
-
-            // $layoutqa = LayoutQA::all();
+    try{
             $resultado = DB::table('layout_q_a_s')
             ->leftJoin('zona_q_a_s','zona_q_a_s.id','=','layout_q_a_s.id_zonaqa')
             ->leftJoin('rack_q_a_s','rack_q_a_s.id','=','layout_q_a_s.id_rackqa')
@@ -210,12 +208,12 @@ class LayoutQAController extends Controller
                 "data" => $resultado
             ]);
 
-        // }catch (Exception $e){
-        //     return response([
-        //         "status" => 400,
-        //         "msn" => 'No se ha guadardo - error'
-        //     ]);
-        // }
+    }catch (Exception $e){
+        return response([
+            "status" => 400,
+            "msn" => 'No se ha guadardo - error'
+        ]);
+    }
         
     }
 
