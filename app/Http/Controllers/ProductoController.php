@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ProductoController extends Controller
 {
     public function saveProducto(Request $request){
-        try{
+        //try{
             $producto = new Producto();
             $producto-> id_empresa = $request -> id_empresa;
             $producto -> sku = $request->sku;
@@ -41,12 +41,12 @@ class ProductoController extends Controller
                 "msn" => 'Se ha guadardo satisfatoriamente'
             ]);
 
-        }catch (Exception $e){
+        /* }catch (Exception $e){
             return response([
                 "status" => 400,
                 "msn" => 'No se ha guadardo - error'
             ]);
-        }
+        } */
     }
 
     public function listarProducto(){
@@ -62,7 +62,7 @@ class ProductoController extends Controller
             'productos.serialisable', 'productos.caducidad','productos.sobresurtimiento','productos.serialisable_surtir',
             'productos.requiere_inspeccion_calidad','productos.requiere_fecha_cadu','productos.numero_parte',
             'productos.requiere_lote','configs_lote.descripcion as id_config_lote','unidad_medida.descripcion as id_unidad_de_medida',
-            'productos.peso','productos.fecha_descontinuo','productos.status','productos.kitting')
+            'productos.peso','productos.fecha_descontinuo','productos.status','productos.kitting', 'productos.cantidad as cantidad')
             ->get();
             return response([
                 "status" => 200,
@@ -101,7 +101,7 @@ class ProductoController extends Controller
             $producto -> fecha_descontinuo = $request->fecha_descontinuo;
             $producto -> status = $request->status;
             $producto -> kitting = $request->kitting;
-        
+            $producto -> cantidad = $request->cantidad;
             $producto -> save();
             
             return response([

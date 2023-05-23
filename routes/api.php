@@ -237,3 +237,9 @@ Route::post('save-busquedaProducto','App\Http\Controllers\MovimientoproductoCont
 Route::get('listar-busquedaProducto','App\Http\Controllers\MovimientoproductoController@listarMovimientoproducto');
 Route::put('actualizar-busquedaProducto/{id}','App\Http\Controllers\MovimientoproductoController@actualizarMovimientoproducto');
 Route::delete('delete-busquedaProducto/{id}','App\Http\Controllers\MovimientoproductoController@deleteMovimientoproducto');
+
+//API  movimiento Interno
+Route::post('save-movimientointerno','App\Http\Controllers\MovimientoInternoController@saveInterno');
+Route::get('listar-movimientointerno','App\Http\Controllers\MovimientoInternoController@listarInterno');
+Route::put('actualizar-movimientointerno/{id}','App\Http\Controllers\MovimientoInternoController@actualizarInterno');
+Route::delete('delete-movimientointerno/{id}','App\Http\Controllers\MovimientoInternoController@deleteInterno');
