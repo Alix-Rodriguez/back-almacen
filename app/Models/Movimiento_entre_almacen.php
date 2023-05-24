@@ -16,7 +16,6 @@ class Movimiento_entre_almacen extends Model
         'id_almacen_destino',
         'id_empresa',
         'id_producto',
-        'id_layout',
         'cantidad'
 
     ];

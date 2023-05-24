@@ -17,7 +17,6 @@ return new class extends Migration
             $table->integer('id_almacen_destino');
             $table->integer('id_empresa');
             $table->integer('id_producto');
-            $table->integer('id_layout');
             $table->string('cantidad');
             $table->timestamps();
         });

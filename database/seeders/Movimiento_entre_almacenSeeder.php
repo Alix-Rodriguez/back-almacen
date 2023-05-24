@@ -20,8 +20,7 @@ class Movimiento_entre_almacenSeeder extends Seeder
             "id_almacen_destino"=>2,
             "id_empresa"=>1,
             "id_producto"=>1,
-            "cantidad"=>"5",
-            "id_layout"=>1
+            "cantidad"=>"5"
             
         ];
         DB::table('movimiento_entre_almacens')->insert($entrealmacen);

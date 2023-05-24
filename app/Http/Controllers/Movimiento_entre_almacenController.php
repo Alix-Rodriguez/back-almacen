@@ -17,7 +17,6 @@ class Movimiento_entre_almacenController extends Controller
             $entrealmacen -> id_almacen_destino = $request -> id_almacen_destino;
             $entrealmacen -> id_empresa = $request -> id_empresa;
             $entrealmacen -> id_producto = $request -> id_producto;
-            $entrealmacen -> id_layout = $request -> id_layout;
             $entrealmacen -> cantidad = $request -> cantidad;
             $entrealmacen -> save();
             return response([
@@ -60,31 +59,6 @@ class Movimiento_entre_almacenController extends Controller
                 '=',
                 'productos.id_config_lote'
             )
-            ->leftJoin(
-                'layouts','layouts.id',
-                '=',
-                'productos.id_layout'
-            )
-            ->leftJoin(
-                'racks','racks.id',
-                '=',
-                'layouts.id_rack'
-            )
-            ->leftJoin(
-                'localidads','localidads.id',
-                '=',
-                'layouts.id_localidad'
-            )
-            ->leftJoin(
-                'nivels','nivels.id',
-                '=',
-                'layouts.id_nivel'
-            )
-            ->leftJoin(
-                'zonas','zonas.id',
-                '=',
-                'layouts.id_zona'
-            )
             ->select(
                 'movimiento_entre_almacens.id',
                 'empresas.nombre_empresa as id_empresa',
@@ -94,11 +68,7 @@ class Movimiento_entre_almacenController extends Controller
                 'productos.descripcion as id_producto',
                 'unidad_medida.descripcion as id_unidad_medida',
                 'movimiento_entre_almacens.cantidad',
-                'configs_lote.descripcion as lote',
-                'racks.descripcion as id_rack',
-                'localidads.descripcion as id_localidad',
-                'nivels.descripcion as id_nivel',
-                'zonas.descripcion as id_zona'
+                'configs_lote.descripcion as lote'
             )
             ->get();
             return response([
@@ -119,7 +89,6 @@ class Movimiento_entre_almacenController extends Controller
             $entrealmacen -> id_almacen_destino = $request -> id_almacen_destino;
             $entrealmacen -> id_empresa = $request -> id_empresa;
             $entrealmacen -> id_producto = $request -> id_producto;
-            $entrealmacen -> id_layout = $request -> id_layout;
             $entrealmacen -> cantidad = $request -> cantidad;
             $entrealmacen -> save();
             return response([
