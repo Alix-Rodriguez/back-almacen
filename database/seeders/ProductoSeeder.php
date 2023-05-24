@@ -33,8 +33,10 @@ class ProductoSeeder extends Seeder
              "peso"=>"2123",
              "fecha_descontinuo"=> "2022-05-11",
              "status"=>"dsadas",
-             "kitting"=>"1" 
+             "kitting"=>"1" ,
+             "id_layout"=>1
         ];
+             
         DB::table('productos')->insert($producto);
     }
 }

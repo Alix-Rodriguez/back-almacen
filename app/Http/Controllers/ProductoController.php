@@ -34,6 +34,7 @@ class ProductoController extends Controller
             $producto -> status = $request->status;
             $producto -> kitting = $request->kitting;
             // $producto -> sku_proveedores = $request->sku_proveedores;
+            $producto -> id_layout = $request->id_layout;
             $producto -> save();
             
             return response([
@@ -50,30 +51,55 @@ class ProductoController extends Controller
     }
 
     public function listarProducto(){
-        try{
+        //try{
             $producto = DB::table('productos')
             ->leftJoin('empresas','empresas.id', '=', 'productos.id_empresa')
             ->leftJoin('linea_productos','linea_productos.id','=', 'productos.id_empresa')
             ->leftJoin('marcas','marcas.id','=', 'productos.id_marca')
             ->leftJoin('configs_lote','configs_lote.id','=', 'productos.id_config_lote')
             ->leftJoin('unidad_medida','unidad_medida.id','=', 'productos.id_unidad_de_medida')
+            ->rightJoin(
+                'racks','racks.id',
+                '=',
+                'layouts.id_rack'
+            )
+            ->rightJoin(
+                'localidads','localidads.id',
+                '=',
+                'layouts.id_localidad'
+            )
+            ->rightJoin(
+                'nivels','nivels.id',
+                '=',
+                'layouts.id_nivel'
+            )
+            ->rightJoin(
+                'zonas','zonas.id',
+                '=',
+                'layouts.id_zona'
+            )
             ->select('productos.id','empresas.nombre_empresa as id_empresa','productos.sku', 'productos.descripcion',
             'productos.modelo', 'linea_productos.descripcion as id_linea_producto','marcas.marca as id_marca',
             'productos.serialisable', 'productos.caducidad','productos.sobresurtimiento','productos.serialisable_surtir',
             'productos.requiere_inspeccion_calidad','productos.requiere_fecha_cadu','productos.numero_parte',
             'productos.requiere_lote','configs_lote.descripcion as id_config_lote','unidad_medida.descripcion as id_unidad_de_medida',
-            'productos.peso','productos.fecha_descontinuo','productos.status','productos.kitting', 'productos.cantidad as cantidad')
+            'productos.peso','productos.fecha_descontinuo','productos.status','productos.kitting',
+            'racks.descripcion as id_rack',
+                'localidads.descripcion as id_localidad',
+                'nivels.descripcion as id_nivel',
+                'zonas.descripcion as id_zona'
+            )
             ->get();
             return response([
                 "status" => 200,
                 "data" => $producto
             ]);
-        }catch(Exception $e){
+        /* }catch(Exception $e){
             return response([
                 "status" => 200,
                 "msn" => 'No se ha guardado - error'
             ]);
-        }
+        } */
     }
 
     public function actualizarProducto(Request $request){
@@ -101,7 +127,8 @@ class ProductoController extends Controller
             $producto -> fecha_descontinuo = $request->fecha_descontinuo;
             $producto -> status = $request->status;
             $producto -> kitting = $request->kitting;
-            $producto -> cantidad = $request->cantidad;
+            $producto -> id_layout = $request->id_layout;
+
             $producto -> save();
             
             return response([

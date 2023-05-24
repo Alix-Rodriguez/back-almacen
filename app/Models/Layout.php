@@ -9,7 +9,7 @@ class Layout extends Model
 {
     use HasFactory;
 
-
+    public $table = 'layouts';
     protected $filltable = [
         'id_zona',
         'id_rack',
