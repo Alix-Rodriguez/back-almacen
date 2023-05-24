@@ -40,6 +40,7 @@ class DatabaseSeeder extends Seeder
             LineaproductoSeeder::class,
             LocalidadSeeder::class,
             MarcaSeeder::class,
+            MovimientoInternoSeeder::class,
             NivelSeeder::class,
             OrdencompraSeeder::class,
             PaisSeeder::class,

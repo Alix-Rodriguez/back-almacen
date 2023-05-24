@@ -34,10 +34,7 @@ class Producto extends Model
         'status',
         'kitting',
         // 'sku_proveedores',
-        'id_rack',
-        'id_localidad',
-        'id_nivel',
-        'id_zona'
+        'id_layout'
     ];
     public $timestamps = false;
 

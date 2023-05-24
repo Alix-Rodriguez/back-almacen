@@ -15,9 +15,9 @@ class LayoutSeeder extends Seeder
     {
         $layout = [
             "id_zona"=>1,
-            "id_rack"=>2,
-            "id_nivel"=>3,
-            "id_localidad"=>4
+            "id_rack"=>1,
+            "id_nivel"=>1,
+            "id_localidad"=>1
         ];
         DB::table('layouts')->insert($layout);
     }

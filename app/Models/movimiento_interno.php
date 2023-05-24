@@ -15,9 +15,8 @@ class movimiento_interno extends Model
         'id',
         'id_empresa',
         'id_almacen',
-        'id_rack',
-        'id_localidad',
-        'id_nivel',
-        'id_zona'
+        'id_producto',
+        'id_layout',
+        'cantidad'
     ];
 }

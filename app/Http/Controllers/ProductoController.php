@@ -58,22 +58,27 @@ class ProductoController extends Controller
             ->leftJoin('marcas','marcas.id','=', 'productos.id_marca')
             ->leftJoin('configs_lote','configs_lote.id','=', 'productos.id_config_lote')
             ->leftJoin('unidad_medida','unidad_medida.id','=', 'productos.id_unidad_de_medida')
-            ->rightJoin(
+            ->leftJoin(
+                'layouts','layouts.id',
+                '=',
+                'productos.id_layout'
+            )
+            ->leftJoin(
                 'racks','racks.id',
                 '=',
                 'layouts.id_rack'
             )
-            ->rightJoin(
+            ->leftJoin(
                 'localidads','localidads.id',
                 '=',
                 'layouts.id_localidad'
             )
-            ->rightJoin(
+            ->leftJoin(
                 'nivels','nivels.id',
                 '=',
                 'layouts.id_nivel'
             )
-            ->rightJoin(
+            ->leftJoin(
                 'zonas','zonas.id',
                 '=',
                 'layouts.id_zona'

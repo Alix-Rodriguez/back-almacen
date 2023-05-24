@@ -17,10 +17,7 @@ return new class extends Migration
             $table->integer('id_almacen');
             $table->integer('id_producto');
             $table->string('cantidad');
-            $table->integer('id_rack');
-            $table->integer('id_localidad');
-            $table->integer('id_nivel');
-            $table->integer('id_zona');
+            $table->integer('id_layout');
             $table->timestamps();
         });
     }

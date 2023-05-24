@@ -17,10 +17,7 @@ class MovimientoInternoController extends Controller
             $interno -> id_almacen = $request-> id_almacen;
             $interno -> id_producto = $request-> id_producto;
             $interno -> cantidad = $request-> cantidad;
-            $interno -> id_rack = $request-> id_rack;
-            $interno -> id_localidad = $request-> id_localidad;
-            $interno -> id_nivel = $request-> id_nivel;
-            $interno -> id_zona = $request-> id_zona;
+            $interno -> id_layout = $request-> id_layout;
             $interno -> save();
             return response([
                 "status" => 200,
@@ -62,24 +59,29 @@ class MovimientoInternoController extends Controller
                 'productos.id_config_lote'
             )
             ->leftJoin(
+                'layouts','layouts.id',
+                '=',
+                'productos.id_layout'
+            )
+            ->leftJoin(
                 'racks','racks.id',
                 '=',
-                'movimiento_internos.id_rack'
+                'layouts.id_rack'
             )
             ->leftJoin(
                 'localidads','localidads.id',
                 '=',
-                'movimiento_internos.id_localidad'
+                'layouts.id_localidad'
             )
             ->leftJoin(
                 'nivels','nivels.id',
                 '=',
-                'movimiento_internos.id_nivel'
+                'layouts.id_nivel'
             )
             ->leftJoin(
                 'zonas','zonas.id',
                 '=',
-                'movimiento_internos.id_zona'
+                'layouts.id_zona'
             )
             ->select(
                 'movimiento_internos.id',
@@ -129,10 +131,7 @@ class MovimientoInternoController extends Controller
             $interno -> id_almacen = $request-> id_almacen;
             $interno -> id_producto = $request-> id_producto;
             $interno -> cantidad = $request-> cantidad;
-            $interno -> id_rack = $request-> id_rack;
-            $interno -> id_localidad = $request-> id_localidad;
-            $interno -> id_nivel = $request-> id_nivel;
-            $interno -> id_zona = $request-> id_zona;
+            $interno -> id_layout = $request-> id_layout;
             $interno -> save();
             return response([
                 "status" => 200,
