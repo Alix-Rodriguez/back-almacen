@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ProductoController extends Controller
 {
     public function saveProducto(Request $request){
-        try{
+        //try{
             $producto = new Producto();
             $producto-> id_empresa = $request -> id_empresa;
             $producto -> sku = $request->sku;
@@ -34,6 +34,7 @@ class ProductoController extends Controller
             $producto -> status = $request->status;
             $producto -> kitting = $request->kitting;
             // $producto -> sku_proveedores = $request->sku_proveedores;
+            $producto -> id_layout = $request->id_layout;
             $producto -> save();
             
             return response([
@@ -41,39 +42,69 @@ class ProductoController extends Controller
                 "msn" => 'Se ha guadardo satisfatoriamente'
             ]);
 
-        }catch (Exception $e){
+        /* }catch (Exception $e){
             return response([
                 "status" => 400,
                 "msn" => 'No se ha guadardo - error'
             ]);
-        }
+        } */
     }
 
     public function listarProducto(){
-        try{
+        //try{
             $producto = DB::table('productos')
             ->leftJoin('empresas','empresas.id', '=', 'productos.id_empresa')
             ->leftJoin('linea_productos','linea_productos.id','=', 'productos.id_empresa')
             ->leftJoin('marcas','marcas.id','=', 'productos.id_marca')
             ->leftJoin('configs_lote','configs_lote.id','=', 'productos.id_config_lote')
             ->leftJoin('unidad_medida','unidad_medida.id','=', 'productos.id_unidad_de_medida')
+            ->leftJoin(
+                'layouts','layouts.id',
+                '=',
+                'productos.id_layout'
+            )
+            ->leftJoin(
+                'racks','racks.id',
+                '=',
+                'layouts.id_rack'
+            )
+            ->leftJoin(
+                'localidads','localidads.id',
+                '=',
+                'layouts.id_localidad'
+            )
+            ->leftJoin(
+                'nivels','nivels.id',
+                '=',
+                'layouts.id_nivel'
+            )
+            ->leftJoin(
+                'zonas','zonas.id',
+                '=',
+                'layouts.id_zona'
+            )
             ->select('productos.id','empresas.nombre_empresa as id_empresa','productos.sku', 'productos.descripcion',
             'productos.modelo', 'linea_productos.descripcion as id_linea_producto','marcas.marca as id_marca',
             'productos.serialisable', 'productos.caducidad','productos.sobresurtimiento','productos.serialisable_surtir',
             'productos.requiere_inspeccion_calidad','productos.requiere_fecha_cadu','productos.numero_parte',
             'productos.requiere_lote','configs_lote.descripcion as id_config_lote','unidad_medida.descripcion as id_unidad_de_medida',
-            'productos.peso','productos.fecha_descontinuo','productos.status','productos.kitting')
+            'productos.peso','productos.fecha_descontinuo','productos.status','productos.kitting',
+            'racks.descripcion as id_rack',
+                'localidads.descripcion as id_localidad',
+                'nivels.descripcion as id_nivel',
+                'zonas.descripcion as id_zona'
+            )
             ->get();
             return response([
                 "status" => 200,
                 "data" => $producto
             ]);
-        }catch(Exception $e){
+        /* }catch(Exception $e){
             return response([
                 "status" => 200,
                 "msn" => 'No se ha guardado - error'
             ]);
-        }
+        } */
     }
 
     public function actualizarProducto(Request $request){
@@ -101,7 +132,8 @@ class ProductoController extends Controller
             $producto -> fecha_descontinuo = $request->fecha_descontinuo;
             $producto -> status = $request->status;
             $producto -> kitting = $request->kitting;
-        
+            $producto -> id_layout = $request->id_layout;
+
             $producto -> save();
             
             return response([

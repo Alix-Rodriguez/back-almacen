@@ -35,6 +35,7 @@ return new class extends Migration
             $table->string('status');
             $table->string('kitting')->nullable();
             // $table->string('sku_proveedores');
+            $table->integer('id_layout');
             $table->timestamps();
         });
     }

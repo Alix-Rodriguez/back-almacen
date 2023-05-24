@@ -49,12 +49,17 @@ class CentrocostosController extends Controller
             '=',
             'centro_costos.id_marca'
         )
+        ->leftJoin(
+            'localidad_alse','localidad_alse.id',
+            '=',
+            'centro_costos.id_ubicacion_elsea'
+        )
         ->select(
             'centro_costos.id',
             'empresas.nombre_empresa',
             'clientes.nombre_cliente',
             'marcas.marca',
-            'centro_costos.id_ubicacion_elsea',
+            'localidad_alse.descripcion as id_ubicacion_elsea',
             'centro_costos.descripcion'
         )
         ->get();

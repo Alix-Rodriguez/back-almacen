@@ -33,7 +33,8 @@ class Producto extends Model
         'fecha_descontinuo',
         'status',
         'kitting',
-        // 'sku_proveedores'
+        // 'sku_proveedores',
+        'id_layout'
     ];
     public $timestamps = false;
 

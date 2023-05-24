@@ -17,7 +17,7 @@ class almacenSeeder extends Seeder
         
         DB::table('almacens')->insert([
 
-            "descuento_almacen"=> "34",
+            "descuento_almacen"=> 1,
             "tipo"=> 1,
             "picking"=> 12,
             "etiqueta_entrada"=> 1,
@@ -31,17 +31,17 @@ class almacenSeeder extends Seeder
             "calle"=> "Calle 67 #77-79",
             "numero_exterior"=> "+583943234",
             "numero_interno"=> "3004515218",
-            "colonia"=> "Mexicali",
+            "colonia"=> 201,
             "cp"=> "33445",
-            "delegacion_municipio"=> "Ciudad de Mexico",
+            "delegacion_municipio"=> 101,
             "telefono"=> "3343453453",
             "email"=> "hola@gmail.com",
             "usar_ubicacion"=> 1,
             "folio_ubicacion"=> 1,
-            // "zona_qa"=> 1,
-            // "rack_qa"=> 1,
-            // "nivel_qa"=> 1,
-            // "localidad_qa"=> 1,
+            "zona_qa"=> 1,
+            "rack_qa"=> 1,
+            "nivel_qa"=> 1,
+            "localidad_qa"=> 1,
             "nombre"=>"yut"
         ]);
     

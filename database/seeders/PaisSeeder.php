@@ -14,8 +14,8 @@ class PaisSeeder extends Seeder
     public function run(): void
     {
         $pais = [
-            "codigo_pais"=>"mx",
-            "pais" => "Mexico"
+            "codigo_pais"=>"co",
+            "pais" => "Colombia"
         ];
         DB::table('paises')->insert($pais);
     }
