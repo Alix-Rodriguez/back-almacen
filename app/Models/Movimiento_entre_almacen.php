@@ -17,6 +17,5 @@ class Movimiento_entre_almacen extends Model
         'id_empresa',
         'id_producto',
         'cantidad'
-
     ];
 }

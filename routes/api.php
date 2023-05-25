@@ -249,3 +249,7 @@ Route::post('save-movimientoentrealmacen','App\Http\Controllers\Movimiento_entre
 Route::get('listar-movimientoentrealmacen','App\Http\Controllers\Movimiento_entre_almacenController@listarEntrealmacen');
 Route::put('actualizar-movimientoentrealmacen/{id}','App\Http\Controllers\Movimiento_entre_almacenController@actualizarEntrealmacen');
 Route::delete('delete-movimientoentrealmacen/{id}','App\Http\Controllers\Movimiento_entre_almacenController@deleteEntrealmacen');
+
+//Registro y login de usuario
+Route::post('registro-usuario','App\Http\Controllers\UserController@register');
+Route::post('login-usuario','App\Http\Controllers\UserController@login');
