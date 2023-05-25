@@ -33,6 +33,36 @@ class UserController extends Controller
                 "msn" => 'El usuario no se ha creado - Error'
             ]);
         }
+    }
+    public function login(Request $request){
+            $request->validate([
+                'email' => 'required|email',
+                'password' => 'required'
+            ]);
+            $user = User::where("email", "=", $request->email)->first();
+            if(isset($user->id) ){
+                if(hash::check($request->password, $user->password)){
+                    //crear el token
+                    $token = $user->createToken("auth_token")->plainTextToken;
+                }else{
+                    return response([
+                        "status" => 404,
+                        "msn" => 'La password es incorrecta - Error'
+                    ]);
+                }
+            }else{
+                return response([
+                    "status" => 404,
+                    "msn" => 'El usuario no se ha creado - Error'
+                ]);
+            }
+            return response([
+                "status" => 200,
+                "msn" => 'El usuario se ha logueado satisfactoriamente',
+                "access_token" => $token
+            ]);
+        
+
         
     }
 }
