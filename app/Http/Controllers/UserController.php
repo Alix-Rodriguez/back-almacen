@@ -20,7 +20,8 @@ class UserController extends Controller
             $user = new User();
             $user -> name = $request -> name;
             $user -> email = $request -> email;
-            $user -> password = $request -> password;
+            $user -> password = Hash::make($request->password);
+            $user -> remember_check = $request -> remember_check;
             $user -> save();
             return response([
                 "status" => 201,
