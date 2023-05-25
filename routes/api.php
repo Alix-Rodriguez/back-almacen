@@ -243,3 +243,13 @@ Route::post('save-movimientointerno','App\Http\Controllers\MovimientoInternoCont
 Route::get('listar-movimientointerno','App\Http\Controllers\MovimientoInternoController@listarInterno');
 Route::put('actualizar-movimientointerno/{id}','App\Http\Controllers\MovimientoInternoController@actualizarInterno');
 Route::delete('delete-movimientointerno/{id}','App\Http\Controllers\MovimientoInternoController@deleteInterno');
+
+//API  movimiento entre almacen
+Route::post('save-movimientoentrealmacen','App\Http\Controllers\Movimiento_entre_almacenController@saveEntrealmacen');
+Route::get('listar-movimientoentrealmacen','App\Http\Controllers\Movimiento_entre_almacenController@listarEntrealmacen');
+Route::put('actualizar-movimientoentrealmacen/{id}','App\Http\Controllers\Movimiento_entre_almacenController@actualizarEntrealmacen');
+Route::delete('delete-movimientoentrealmacen/{id}','App\Http\Controllers\Movimiento_entre_almacenController@deleteEntrealmacen');
+
+//Registro y login de usuario
+Route::post('registro-usuario','App\Http\Controllers\UserController@register');
+Route::post('login-usuario','App\Http\Controllers\UserController@login');

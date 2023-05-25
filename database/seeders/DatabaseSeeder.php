@@ -41,6 +41,7 @@ class DatabaseSeeder extends Seeder
             LocalidadSeeder::class,
             MarcaSeeder::class,
             MovimientoInternoSeeder::class,
+            Movimiento_entre_almacenSeeder::class,
             NivelSeeder::class,
             OrdencompraSeeder::class,
             PaisSeeder::class,
