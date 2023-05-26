@@ -253,3 +253,10 @@ Route::delete('delete-movimientoentrealmacen/{id}','App\Http\Controllers\Movimie
 //Registro y login de usuario
 Route::post('registro-usuario','App\Http\Controllers\UserController@register');
 Route::post('login-usuario','App\Http\Controllers\UserController@login');
+
+
+Route::group( ['middleware' => ["auth:sanctum"]], function(){
+    //rutas
+    Route::get('profile-usuario','App\Http\Controllers\UserController@profile');
+    Route::get('logout-usuario','App\Http\Controllers\UserController@logout');
+});

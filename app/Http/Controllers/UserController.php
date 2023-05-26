@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Exception;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Sanctum\Sanctum;
 
 class UserController extends Controller
 {
@@ -61,8 +62,21 @@ class UserController extends Controller
                 "msn" => 'El usuario se ha logueado satisfactoriamente',
                 "access_token" => $token
             ]);
-        
+    }
+    public function profile() {
+        return response()->json([
+            "status" => 0,
+            "msg" => "Acerca del perfil de usuario",
+            "data" => auth()->User()
+        ]); 
+    }
 
+    public function logout() {
+        auth()->user()->tokens()->delete();
         
+        return response()->json([
+            "status" => 1,
+            "msg" => "Cierre de Sesión",            
+        ]); 
     }
 }
