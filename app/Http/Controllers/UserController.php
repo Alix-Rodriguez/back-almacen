@@ -36,11 +36,11 @@ class UserController extends Controller
         }
     }
     public function login(Request $request){
-            $request->validate([
-                'email' => 'required|email',
-                'password' => 'required'
-            ]);
-            $user = User::where("email", "=", $request->email)->first();
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+        $user = User::where("email", "=", $request->email)->first();
             if(isset($user->id) ){
                 if(hash::check($request->password, $user->password)){
                     //crear el token
