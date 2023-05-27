@@ -251,12 +251,12 @@ Route::put('actualizar-movimientoentrealmacen/{id}','App\Http\Controllers\Movimi
 Route::delete('delete-movimientoentrealmacen/{id}','App\Http\Controllers\Movimiento_entre_almacenController@deleteEntrealmacen');
 
 //Registro y login de usuario
-Route::post('registro-usuario','App\Http\Controllers\UserController@register');
-Route::post('login-usuario','App\Http\Controllers\UserController@login');
 
 
-Route::group( ['middleware' => ["auth:sanctum"]], function(){
+Route::group( ['middleware' => 'api', 'prefix'=>'auth'], function($router){
     //rutas
-    Route::get('profile-usuario','App\Http\Controllers\UserController@profile');
-    Route::get('logout-usuario','App\Http\Controllers\UserController@logout');
+    Route::post('registro-usuario','App\Http\Controllers\AuthController@register');
+    Route::post('login-usuario','App\Http\Controllers\AuthController@login');
+    Route::get('profile-usuario','App\Http\Controllers\AuthController@profile');
+    Route::get('logout-usuario','App\Http\Controllers\AuthController@logout');
 });
