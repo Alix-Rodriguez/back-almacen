@@ -13,18 +13,6 @@ class AuthController extends Controller
     {
         $this->middleware('auth:api', ['except' => ['login','register']]);
     }
-
-    public function login(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
-
-        if ($token = Auth::attempt($credentials)) {
-            return $this->respondWithToken($token);
-        }
-
-        return response()->json(['error' => 'Unauthorized'], 401);
-    }
-
     protected function respondWithToken($token)
     {
         return response()->json([
@@ -33,6 +21,22 @@ class AuthController extends Controller
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
     }
+    
+    public function login(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if ($token = Auth::attempt($credentials)) {
+            return response([
+                "status" => 200,
+                "msn" => 'el usuarios se ha logueado satisfactoriamente!',
+                "token_access" => $token
+            ]);
+        }
+
+        return response()->json(['error' => 'Unauthorized'], 401);
+    }
+
 
     public function register(Request $request)
     {
@@ -57,12 +61,16 @@ class AuthController extends Controller
     }
     public function profile()
     {
-        return response()->json(auth()->user());
+        return response()->json([
+            "status" => 200,
+            "data" => auth()->user()]);
     }
     public function logout()
     {
         auth()->logout();
 
-        return response()->json(['message' => 'El usuario ha cerrado sesion']);
+        return response()->json([
+            "status" => 200,
+            'message' => 'El usuario ha cerrado sesion']);
     }
 }
