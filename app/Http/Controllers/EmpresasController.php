@@ -14,7 +14,6 @@ class EmpresasController extends Controller
             $empresa->nombre_empresa = $request->nombre_empresa;
             $empresa->direccion_empresa = $request->direccion_empresa;
             $empresa->centro_costo = $request->centro_costo;
-            $empresa->logo_empresa = $request->logo_empresa;
             $empresa->nif_empresa = $request->nif_empresa;
             $empresa-> save();
     
@@ -35,8 +34,7 @@ class EmpresasController extends Controller
     public function listarEmpresas(){
         try{
 
-            $empresa = Empresas::all(['id','nombre_empresa','direccion_empresa',
-            'centro_costo','logo_empresa','nif_empresa','created_at as creado']);
+            $empresa = Empresas::all();
     
             return response([
                 "status" => 200,
@@ -93,7 +91,6 @@ class EmpresasController extends Controller
                 $empresa->nombre_empresa = $request->nombre_empresa;
                 $empresa->direccion_empresa = $request->direccion_empresa;
                 $empresa->centro_costo = $request->centro_costo;
-                $empresa->logo_empresa = $request->logo_empresa;
                 $empresa->nif_empresa = $request->nif_empresa;
                 $empresa-> save();
         

@@ -14,7 +14,6 @@ protected $filltable = [
     'nombre_empresa',
     'direccion_empresa',
     'centro_costo',
-    'logo_empresa',
     'nif_empresa',
 ];
 

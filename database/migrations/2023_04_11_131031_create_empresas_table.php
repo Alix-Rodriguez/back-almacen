@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('nombre_empresa');
             $table->string('direccion_empresa');
             $table->string('centro_costo');
-            $table->string('logo_empresa');
             $table->string('nif_empresa');
             $table->timestamps();
         });
