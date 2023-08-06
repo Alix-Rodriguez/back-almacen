@@ -15,75 +15,55 @@ class DelegacionSeeder extends Seeder
     {
         $delegacion = [
             [
-                "descripcion"=>"Álvaro Obregón",
+                "descripcion"=>"Distrito Capital",
                 "code_delegacion"=>101
             ],
             [
-                "descripcion"=>"Azcapotzalco",
+                "descripcion"=>"Miranda",
                 "code_delegacion"=>102
             ],
             [
-                "descripcion"=>"Benito Juárez",
-                "code_delegacion"=>103
-            ],
-            [
-                "descripcion"=>"Coyoacán",
+                "descripcion"=>"Carabobo",
                 "code_delegacion"=>104
             ],
             [
-                "descripcion"=>"Cuajimalpa de Morelos",
+                "descripcion"=>"Falcón",
                 "code_delegacion"=>105
             ],
             [
-                "descripcion"=>"Cuauhtémoc",
+                "descripcion"=>"Aragua",
                 "code_delegacion"=>106
             ],
             [
-                "descripcion"=>"Gustavo A. Madero",
+                "descripcion"=>"Cojedes",
                 "code_delegacion"=>107
             ],
             [
-                "descripcion"=>"Cuajimalpa de Morelos",
+                "descripcion"=>"Guárico",
                 "code_delegacion"=>108
             ],
             [
-                "descripcion"=>"Iztacalco",
+                "descripcion"=>"Trujillo",
                 "code_delegacion"=>109
             ],
             [
-                "descripcion"=>"Iztapalapa",
+                "descripcion"=>"Zulia",
                 "code_delegacion"=>110
             ],
             [
-                "descripcion"=>"La Magdalena Contreras",
+                "descripcion"=>"Yaracuy",
                 "code_delegacion"=>111
             ],
             [
-                "descripcion"=>"Miguel Hidalgo",
+                "descripcion"=>"Portuguesa",
                 "code_delegacion"=>112
             ],
             [
-                "descripcion"=>"Milpa Alta",
-                "code_delegacion"=>113
-            ],
-            [
-                "descripcion"=>"Municipality name",
-                "code_delegacion"=>114
-            ],
-            [
-                "descripcion"=>"Tláhuac",
-                "code_delegacion"=>115
-            ],
-            [
-                "descripcion"=>"Tlalpan",
-                "code_delegacion"=>116
-            ],
-            [
-                "descripcion"=>"Venustiano Carranza",
+                "descripcion"=>"Anzoátegui",
                 "code_delegacion"=>117
             ],
             [
-                "descripcion"=>"Xochimilco",
+                "descripcion"=>"Sucre",
                 "code_delegacion"=>118
             ]
         ];
